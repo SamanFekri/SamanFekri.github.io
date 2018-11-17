@@ -21,9 +21,11 @@
 
 
 
-
-
 /*Preloader*/
+html {
+  scroll-behavior: smooth;
+}
+
 #loader {
     background: #efefef;
     bottom: 0;
