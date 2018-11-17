@@ -1,0 +1,38 @@
+{
+  "nav": [
+    {
+      "link": "#about",
+      "icon": "icon-user",
+      "text": "About ME"
+    },
+    {
+      "link": "#portfolio",
+      "icon": "icon-camera",
+      "text": "EDUCATION"
+    },
+    {
+      "link": "#blog",
+      "icon": "icon-chat",
+      "text": "WORK EXPERIENCE"
+    },
+    {
+      "link": "#contact",
+      "icon": "icon-phone",
+      "text": "TEACHING"
+    }
+  ],
+  "social": [
+    {
+      "href": "https://twitter.com/samanf1995",
+      "icon": "icon-twitter"
+    },
+    {
+      "href": "https://github.com/SamanFekri",
+      "icon": "icon-github"
+    },
+    {
+      "href": "https://www.linkedin.com/in/saman-fekri-574589ba/",
+      "icon": "icon-linkedin"
+    }
+  ]
+}

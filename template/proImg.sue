@@ -1,0 +1,15 @@
+<id>proImg</id>
+<template>
+<figure class="img-profile">
+    <img :src="src" alt=""/>
+    <figcaption class="name-profile">
+        <span>{{ name }} {{ lastname }}</span>
+    </figcaption>
+</figure>
+</template>
+<data>
+</data>
+<other>
+</other>
+<style>
+</style>

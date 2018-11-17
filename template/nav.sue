@@ -1,0 +1,32 @@
+<id>side_nav</id>
+<template>
+    <nav id="main-nav" class="main-nav clearfix tabbed">
+        <ul>
+            <li v-for="item in items"><a :href="item.link"><i :class="item.icon"></i>{{ item.text }}</M></a></li>
+        </ul>
+    </nav>
+</template>
+<data>
+data : {
+    items :[]
+}
+</data>
+<other>
+methods: {
+    fetchList: function () {
+    fetch('data/navigate.json')
+        .then(res => res.json())
+        .then(
+            (response) => {
+                this.items = response.nav;
+                console.log(this.items);
+            }
+        );
+    }
+},
+beforeMount() {
+    this.fetchList();
+}
+</other>
+<style>
+</style>
