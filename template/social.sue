@@ -2,10 +2,9 @@
 <template>
     <div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
         <ul class="social">
-            <li v-for="item in items"><a :href="item.href" target="_blank"><i :class="item.icon"></i></a></li>
+            <li v-for="item in items" class="anim"><a :href="item.href" target="_blank"><i :class="item.icon"></i></a></li>
         </ul>
-        <p>&copy; 2015 Mutationthemes.</p>
-        <p>Powered by <a href="https://github.com/SamanFekri/Sauce" target="_blank">Sauce.js</a></p>
+        <p>Powered by <a href="https://github.com/SamanFekri/Sauce" class="anim" target="_blank">Sauce.js</a></p>
     </div>
 </template>
 <data>
@@ -29,4 +28,24 @@ beforeMount() {
 }
 </other>
 <style>
+    div p a {
+        display:inline-block;
+        color: red;
+        font-weight: normal;
+
+    }
+    div p a:hover {
+        display:inline-block;
+        font-weight: bold;
+    }
+    .anim {
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .anim:hover {
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 </style>

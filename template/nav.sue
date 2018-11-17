@@ -29,4 +29,18 @@ beforeMount() {
 }
 </other>
 <style>
+nav ul li{
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 0;
+    border-bottom: 1px solid #26292e;
+}
+div ul li:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 1;
+    border-bottom: 0px;
+}
 </style>
