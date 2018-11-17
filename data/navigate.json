@@ -7,18 +7,18 @@
     },
     {
       "link": "#portfolio",
-      "icon": "icon-camera",
+      "icon": "icon-graduation-cap",
       "text": "EDUCATION"
     },
     {
-      "link": "#blog",
-      "icon": "icon-chat",
-      "text": "WORK EXPERIENCE"
+      "link": "#contact",
+      "icon": "icon-pencil",
+      "text": "TEACHING"
     },
     {
-      "link": "#contact",
-      "icon": "icon-phone",
-      "text": "TEACHING"
+      "link": "#blog",
+      "icon": "icon-briefcase",
+      "text": "WORK EXPERIENCE"
     }
   ],
   "social": [
