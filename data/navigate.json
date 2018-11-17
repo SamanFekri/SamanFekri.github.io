@@ -6,17 +6,17 @@
       "text": "About ME"
     },
     {
-      "link": "#portfolio",
+      "link": "#education",
       "icon": "icon-graduation-cap",
       "text": "EDUCATION"
     },
     {
-      "link": "#contact",
+      "link": "#teaching",
       "icon": "icon-pencil",
       "text": "TEACHING"
     },
     {
-      "link": "#blog",
+      "link": "#work-exp",
       "icon": "icon-briefcase",
       "text": "WORK EXPERIENCE"
     }

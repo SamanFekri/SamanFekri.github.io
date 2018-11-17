@@ -57,26 +57,10 @@
                         <!--End profile image-->
                         <!--Main navigation-->
                         <side_nav></side_nav>
-                        <!--<nav id="main-nav" class="main-nav clearfix tabbed">-->
-                            <!--<ul>-->
-                                <!--<li><a href="#about"><i class="icon-user"></i>About ME</M></a></li>-->
-                                <!--<li><a href="#portfolio"><i class="icon-camera"></i>EDUCATION</a></li>-->
-                                <!--<li><a href="#blog"><i class="icon-chat"></i>WORK EXPERIENCE</a></li>-->
-                                <!--<li><a href="#contact"><i class="icon-phone"></i>TEACHING</a></li>-->
-                            <!--</ul>-->
-                        <!--</nav>-->
                         <!--End main navigation-->
                     </div>
                     <!--End main header-->
                     <social_nav></social_nav>
-                    <!--<div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">-->
-                        <!--<ul class="social">-->
-                            <!--<li><a href="#"><i class="icon-facebook"></i></a></li>-->
-                            <!--<li><a href="#"><i class="icon-twitter"></i></a></li>-->
-                            <!--<li><a href="#"><i class="icon-linkedin"></i></a></li>-->
-                        <!--</ul>-->
-                        <!--<p>&copy; 2015 Mutationthemes.</p>-->
-                    <!--</div>-->
                 </header>
                 <!--End  header-->
             </div>
@@ -88,17 +72,7 @@
                     <!--About -->
                     <div class="about">
                         <!--Main title-->
-                        <div class="main-title">
-                            <h1>who am i</h1>
-                            <div class="divider">
-                                <div class="zigzag large clearfix " data-svg-drawing="yes">
-                                    <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                             <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                                                29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-                                          </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <mainTitle data:title="Who am I"></mainTitle>
                         <!--End main title-->
                         <!--Content-->
                         <div class="content">
@@ -158,7 +132,7 @@
                             <div class="row ">
                                 <div class="col-md-12">
                                     <a class="but opc-1 ico" href="#">Download my cv</a>
-                                    <a class="but opc-2 ico" href="#">Print my resume</a>
+                                    <!--<a class="but opc-2 ico" href="#">Print my resume</a>-->
                                 </div>
                             </div>
                             <!--End row-->
@@ -169,7 +143,7 @@
                 </section>
                 <!--End about tab-->
                 <!--Education Tab-->
-                <section id="portfolio" class="bgWhite ofsInBottom">
+                <section id="education" class="bgWhite ofsInBottom">
                     <!--Portfolio -->
                     <div class="portfolio">
                         <!--Education Main title-->
@@ -284,7 +258,7 @@
                 </section>
                 <!--End portfolio tab-->
                 <!--Experience Tab-->
-                <section id="blog" class="bgWhite ofsInBottom">
+                <section id="teaching" class="bgWhite ofsInBottom">
                     <!--Blog -->
                     <div class="blog">
                         <!--Experience Main title-->
@@ -400,7 +374,7 @@
                 </section>
                 <!--End blog tab-->
                 <!--Teaching Tab-->
-                <section id="contact" class="bgWhite ofsInBottom">
+                <section id="work-exp" class="bgWhite ofsInBottom">
                     <!--Contact -->
                     <div class="contact">
                         <!--Experience Main title-->
@@ -639,6 +613,7 @@
     {name: 'proImg', src: 'template/proImg.sue'},
     {name: 'side_nav', src: 'template/nav.sue'},
     {name: 'social_nav', src: 'template/social.sue'},
+    {name: 'mainTitle', src: 'template/MainTitle.sue'},
     ];
   new Sauce(sauces);
 
