@@ -13,13 +13,11 @@
                             <!--Experience-->
                             <div class="exp"  v-for="item in items">
                                 <div class="hgroup">
-                                    <h4 v-if="item.title">{{ item.title }}</h4>
-                                    <h6 v-if="item.duration"><i class="icon-calendar"></i>{{ item.duration }}</h6>
-                                    <h6 v-if="item.subtitle">{{ item.subtitle }}</h6>
+                                    <h4 v-if="item.title" v-html="item.title"></h4>
+                                    <h6 v-if="item.duration"><i class="icon-calendar"></i><span v-html="item.duration"></span></h6>
+                                    <h6 v-if="item.subtitle" v-html="item.subtitle"></h6>
                                 </div>
-                                <p v-if="item.body">
-                                    {{ item.body }} 4
-                                </p>
+                                <p v-if="item.body" v-html="item.body"></p>
                             </div>
                             <!--End experience-->
                         </div>
@@ -65,5 +63,11 @@
 
     .teaching:after{
         content: '\e833';
+    }
+    .bold-color {
+        color: #eb874f;
+    }
+    b {
+        font-weight: bold;
     }
 </style>
