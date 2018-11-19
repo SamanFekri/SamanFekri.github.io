@@ -583,13 +583,13 @@ html {
 }
 
 
-.timeline.experience:after{
-	content: '\e8ba';
-}
+/*.timeline.experience:after{*/
+	/*content: '\e8ba';*/
+/*}*/
 
-.timeline.education:after{
-	content: '\e80c';
-}
+/*.timeline.education:after{*/
+	/*content: '\e80c';*/
+/*}*/
 
 
 .exp{

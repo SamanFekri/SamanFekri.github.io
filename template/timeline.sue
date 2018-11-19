@@ -1,0 +1,69 @@
+<id>timeline</id>
+<template>
+    <div class="content">
+        <!--Block content-->
+        <div class="block-content">
+            <!--Timeline-->
+            <div class="timeline icon-pencil" v-bind:class="[icon]">
+                <!--Row-->
+                <div class="row ">
+                    <div class="col-md-12">
+                        <!--Experience holder-->
+                        <div class="exp-holder margTop">
+                            <!--Experience-->
+                            <div class="exp"  v-for="item in items">
+                                <div class="hgroup">
+                                    <h4 v-if="item.title">{{ item.title }}</h4>
+                                    <h6 v-if="item.duration"><i class="icon-calendar"></i>{{ item.duration }}</h6>
+                                    <h6 v-if="item.subtitle">{{ item.subtitle }}</h6>
+                                </div>
+                                <p v-if="item.body">
+                                    {{ item.body }} 4
+                                </p>
+                            </div>
+                            <!--End experience-->
+                        </div>
+                        <!--End experience holder-->
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End timeline-->
+        </div>
+        <!--End block content-->
+    </div>
+</template>
+<data>
+    data : {
+        items :[]
+    }
+</data>
+<other>
+    methods: {
+        fetchList: function () {
+            fetch(this.url)
+            .then(res => res.json())
+            .then((response) => {
+                this.items = response;
+                console.log(response);
+            }
+            );
+        }
+    },
+    beforeMount() {
+        this.fetchList();
+    }
+</other>
+<style>
+    .experience:after{
+        content: '\e8ba';
+    }
+
+    .education:after{
+        content: '\e80c';
+    }
+
+    .teaching:after{
+        content: '\e833';
+    }
+</style>

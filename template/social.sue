@@ -2,7 +2,8 @@
 <template>
     <div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
         <ul class="social">
-            <li v-for="item in items" class="anim"><a :href="item.href" target="_blank"><i :class="item.icon"></i></a></li>
+            <li v-for="item in items" class="anim"><a :href="item.href" target="_blank"><i :class="item.icon"></i></a>
+            </li>
         </ul>
         <p>Built using
             <a href="https://github.com/SamanFekri/Sauce" class="anim" target="_blank">Sauce.js</a>
@@ -12,41 +13,44 @@
     </div>
 </template>
 <data>
-data : {
-items :[]
-}
+    data : {
+    items :[]
+    }
 </data>
 <other>
-methods: {
+    methods: {
     fetchList: function () {
-        fetch('data/navigate.json')
-        .then(res => res.json())
-        .then( (response) => {
-            this.items = response.social;
-            console.log(this.items);
-        });
+    fetch('data/navigate.json')
+    .then(res => res.json())
+    .then( (response) => {
+    this.items = response.social;
+    console.log(this.items);
+    });
     }
-},
-beforeMount() {
+    },
+    beforeMount() {
     this.fetchList();
-}
+    }
 </other>
 <style>
     div p a {
-        display:inline-block;
+        display: inline-block;
         color: red;
         font-weight: normal;
 
     }
+
     div p a:hover {
-        display:inline-block;
+        display: inline-block;
         font-weight: bold;
     }
+
     .anim {
         -moz-transition: all 0.3s;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
     }
+
     .anim:hover {
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
