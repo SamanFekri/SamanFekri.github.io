@@ -1,0 +1,12 @@
+<id>btn</id>
+<template>
+<div class="col-md-12">
+    <a class="but opc-2" v-bind:class="[icon]" :href="href">{{ text }}</a>
+</div>
+</template>
+<data>
+</data>
+<other>
+</other>
+<style>
+</style>

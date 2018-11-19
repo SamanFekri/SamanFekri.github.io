@@ -26,6 +26,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.bullet {
+  list-style-type: circle;
+  margin-left: 15px;
+}
+
 #loader {
     background: #efefef;
     bottom: 0;

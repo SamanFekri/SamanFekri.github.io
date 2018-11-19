@@ -4,7 +4,11 @@
         <ul class="social">
             <li v-for="item in items" class="anim"><a :href="item.href" target="_blank"><i :class="item.icon"></i></a></li>
         </ul>
-        <p>Powered by <a href="https://github.com/SamanFekri/Sauce" class="anim" target="_blank">Sauce.js</a></p>
+        <p>Built using
+            <a href="https://github.com/SamanFekri/Sauce" class="anim" target="_blank">Sauce.js</a>
+            and
+            <a href="https://vuejs.org/">Vue.js</a>
+        </p>
     </div>
 </template>
 <data>
