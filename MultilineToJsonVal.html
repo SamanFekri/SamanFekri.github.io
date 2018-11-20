@@ -34,7 +34,7 @@
         textChanged(val) {
           let temp = val.replace(/(\n|\r\n)/g, '\\n');
           temp = temp.replace(/"/g,'\\"');
-          this.json_text = temp;
+          this.json_text = temp.trim();
         }
       }
     })
