@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MultilineToJsonVal.html" beforeDir="false" afterPath="$PROJECT_DIR$/MultilineToJsonVal.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,8 +61,8 @@
       <file leaf-file-name="MultilineToJsonVal.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state relative-caret-position="540">
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -181,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542612395167</updated>
       <workItem from="1542612397530" duration="9177000" />
-      <workItem from="1542706447565" duration="427000" />
+      <workItem from="1542706447565" duration="523000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -204,11 +205,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542623784511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="just change multi line to single line with trim">
+      <created>1542707236914</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542707236914</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9604000" />
+    <option name="totallyTimeSpent" value="9700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -243,7 +251,8 @@
     <MESSAGE value="create timeline component" />
     <MESSAGE value="fixing some errors" />
     <MESSAGE value="create multi line to json value" />
-    <option name="LAST_COMMIT_MESSAGE" value="create multi line to json value" />
+    <MESSAGE value="just change multi line to single line with trim" />
+    <option name="LAST_COMMIT_MESSAGE" value="just change multi line to single line with trim" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -348,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="540">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>

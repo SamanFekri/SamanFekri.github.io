@@ -9,7 +9,7 @@
         <h3>Normal</h3>
         <textarea rows="20" cols="150" v-model="text" @keyUp="textChanged($event.target.value)"></textarea>
         <h3>JSON Value</h3>
-        <textarea rows="1" cols="150" v-model="json_text" @keyUp="jsonChanged($event.target.value)"></textarea>
+        <textarea rows="20" cols="150" v-model="json_text" @keyUp="jsonChanged($event.target.value)"></textarea>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -33,7 +33,7 @@
         },
         textChanged(val) {
           let temp = val.replace(/(\n|\r\n)/g, '\\n');
-          temp = temp.replace(/"/g,'\\"');
+          temp = temp.replace(/"/g,'\"');
           this.json_text = temp.trim();
         }
       }
