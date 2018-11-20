@@ -32,9 +32,10 @@
           this.text = temp;
         },
         textChanged(val) {
-          let temp = val.replace(/(\n|\r\n)/g, '\\n');
-          temp = temp.replace(/"/g,'\"');
-          this.json_text = temp.trim();
+          let temp = val.trim();
+          temp = val.replace(/(\n|\r\n)/g, '\\n');
+          temp = temp.replace(/"/g,'\\"');
+          this.json_text = temp;
         }
       }
     })

@@ -52,8 +52,8 @@
       <file leaf-file-name="education.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/education.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="75">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -61,8 +61,8 @@
       <file leaf-file-name="MultilineToJsonVal.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+            <state relative-caret-position="525">
+              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -182,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542612395167</updated>
       <workItem from="1542612397530" duration="9177000" />
-      <workItem from="1542706447565" duration="523000" />
+      <workItem from="1542706447565" duration="1421000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -212,11 +212,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542707236914</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix an error">
+      <created>1542707479984</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542707479984</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9700000" />
+    <option name="totallyTimeSpent" value="10598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -252,7 +259,8 @@
     <MESSAGE value="fixing some errors" />
     <MESSAGE value="create multi line to json value" />
     <MESSAGE value="just change multi line to single line with trim" />
-    <option name="LAST_COMMIT_MESSAGE" value="just change multi line to single line with trim" />
+    <MESSAGE value="fix an error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix an error" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -322,13 +330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/education.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/timeline.sue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
@@ -355,10 +356,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/education.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        <state relative-caret-position="525">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
         </state>
       </provider>
     </entry>
