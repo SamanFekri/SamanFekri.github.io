@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultilineToJsonVal.html" beforeDir="false" afterPath="$PROJECT_DIR$/MultilineToJsonVal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/education.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/education.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/timeline.sue" beforeDir="false" afterPath="$PROJECT_DIR$/template/timeline.sue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +21,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3285">
+            <state relative-caret-position="2287">
               <caret line="526" selection-start-line="526" selection-end-line="528" />
               <folding>
                 <element signature="n#section#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -35,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/template/nav.sue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -43,26 +44,26 @@
       <file leaf-file-name="timeline.sue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/timeline.sue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+            <state relative-caret-position="240">
+              <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="education.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="education.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/education.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <caret line="5" column="443" selection-start-line="5" selection-start-column="443" selection-end-line="5" selection-end-column="443" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultilineToJsonVal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MultilineToJsonVal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="480">
+              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -85,8 +86,8 @@
       <find>“</find>
     </findStrings>
     <replaceStrings>
-      <replace>bold-color</replace>
       <replace>'</replace>
+      <replace>bold-color</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -98,9 +99,9 @@
         <option value="$PROJECT_DIR$/template/social.sue" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/MultilineToJsonVal.html" />
         <option value="$PROJECT_DIR$/template/timeline.sue" />
         <option value="$PROJECT_DIR$/data/education.json" />
-        <option value="$PROJECT_DIR$/MultilineToJsonVal.html" />
       </list>
     </option>
   </component>
@@ -182,7 +183,8 @@
       <option name="presentableId" value="Default" />
       <updated>1542612395167</updated>
       <workItem from="1542612397530" duration="9177000" />
-      <workItem from="1542706447565" duration="1421000" />
+      <workItem from="1542706447565" duration="1681000" />
+      <workItem from="1542718614881" duration="1016000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -219,11 +221,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542707479984</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="trim added">
+      <created>1542708549430</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542708549430</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10598000" />
+    <option name="totallyTimeSpent" value="11874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -260,9 +269,50 @@
     <MESSAGE value="create multi line to json value" />
     <MESSAGE value="just change multi line to single line with trim" />
     <MESSAGE value="fix an error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix an error" />
+    <MESSAGE value="trim added" />
+    <option name="LAST_COMMIT_MESSAGE" value="trim added" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7890">
+          <caret line="526" selection-start-line="526" selection-end-line="528" />
+          <folding>
+            <element signature="n#section#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#2;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#3;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/nav.sue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/timeline.sue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/education.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="2538" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="2538" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3285">
@@ -330,23 +380,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/timeline.sue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/nav.sue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3285">
+        <state relative-caret-position="2287">
           <caret line="526" selection-start-line="526" selection-end-line="528" />
           <folding>
             <element signature="n#section#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -356,17 +406,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/education.json">
+    <entry file="file://$PROJECT_DIR$/template/timeline.sue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="240">
+          <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
+    <entry file="file://$PROJECT_DIR$/data/education.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="75">
+          <caret line="5" column="443" selection-start-line="5" selection-start-column="443" selection-end-line="5" selection-end-column="443" />
         </state>
       </provider>
     </entry>

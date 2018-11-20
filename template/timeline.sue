@@ -4,7 +4,7 @@
         <!--Block content-->
         <div class="block-content">
             <!--Timeline-->
-            <div class="timeline icon-pencil" v-bind:class="[icon]">
+            <div class="timeline" v-bind:class="[icon]">
                 <!--Row-->
                 <div class="row ">
                     <div class="col-md-12">
