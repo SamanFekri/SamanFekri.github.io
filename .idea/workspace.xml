@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/experience.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +17,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
+            <state relative-caret-position="-618">
               <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
             </state>
           </provider>
@@ -30,8 +26,8 @@
       <file leaf-file-name="experience.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/experience.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="605" selection-start-line="5" selection-start-column="605" selection-end-line="5" selection-end-column="605" />
+            <state relative-caret-position="165">
+              <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -246,7 +242,7 @@
       <workItem from="1542706447565" duration="1681000" />
       <workItem from="1542718614881" duration="4777000" />
       <workItem from="1542736069518" duration="746000" />
-      <workItem from="1542781855106" duration="2188000" />
+      <workItem from="1542781855106" duration="2414000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -311,15 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542736683407</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="compelete the Home page at first step">
+      <created>1542784838208</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542784838208</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18569000" />
+    <option name="totallyTimeSpent" value="18795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -356,7 +358,8 @@
     <MESSAGE value="adding the education in university" />
     <MESSAGE value="education almost finished we go to next page" />
     <MESSAGE value="Teaching Experience completed in Homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Teaching Experience completed in Homepage" />
+    <MESSAGE value="compelete the Home page at first step" />
+    <option name="LAST_COMMIT_MESSAGE" value="compelete the Home page at first step" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -626,15 +629,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="-618">
           <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/experience.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="605" selection-start-line="5" selection-start-column="605" selection-end-line="5" selection-end-column="605" />
+        <state relative-caret-position="165">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
