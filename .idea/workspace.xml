@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/img/SKings.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/education.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/education.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/teaching.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/teaching.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1077">
-              <caret line="193" column="32" selection-start-line="193" selection-start-column="28" selection-end-line="193" selection-end-column="32" />
+            <state relative-caret-position="285">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -54,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="education.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="education.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/education.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -63,29 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="6" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="7305">
-              <caret line="487" column="48" lean-forward="true" selection-start-line="487" selection-start-column="48" selection-end-line="487" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timeline.sue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/timeline.sue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+              <caret line="487" column="48" selection-start-line="487" selection-start-column="48" selection-end-line="487" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -103,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -155,10 +137,10 @@
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/css/base.css" />
         <option value="$PROJECT_DIR$/data/experience.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/template/button.sue" />
         <option value="$PROJECT_DIR$/data/teaching.json" />
         <option value="$PROJECT_DIR$/data/education.json" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -201,6 +183,17 @@
             <path>
               <item name="SamanFekri.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="SamanFekri.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SamanFekri.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SamanFekri.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SamanFekri.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SamanFekri.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -219,6 +212,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
@@ -250,7 +244,7 @@
       <workItem from="1542736069518" duration="746000" />
       <workItem from="1542781855106" duration="2414000" />
       <workItem from="1542871618236" duration="360000" />
-      <workItem from="1543137081744" duration="677000" />
+      <workItem from="1543137081744" duration="1169000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -336,11 +330,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542871880834</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="adding selected course and fix some bugs">
+      <created>1543138220578</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543138220579</updated>
+    </task>
+    <task id="LOCAL-00014" summary="change CV">
+      <created>1543138360390</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1543138360390</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19832000" />
+    <option name="totallyTimeSpent" value="20324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -384,23 +392,11 @@
     <MESSAGE value="compelete the Home page at first step" />
     <MESSAGE value="adding CV to home Page now home page version is 1.0.0" />
     <MESSAGE value="fix a lil problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix a lil problem" />
+    <MESSAGE value="adding selected course and fix some bugs" />
+    <MESSAGE value="change CV" />
+    <option name="LAST_COMMIT_MESSAGE" value="change CV" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog_single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/nav.sue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
@@ -683,7 +679,7 @@
     <entry file="file://$PROJECT_DIR$/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7305">
-          <caret line="487" column="48" lean-forward="true" selection-start-line="487" selection-start-column="48" selection-end-line="487" selection-end-column="48" />
+          <caret line="487" column="48" selection-start-line="487" selection-start-column="48" selection-end-line="487" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -718,21 +714,27 @@
     <entry file="file://$PROJECT_DIR$/MultilineToJsonVal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1077">
-          <caret line="193" column="32" selection-start-line="193" selection-start-column="28" selection-end-line="193" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/img/marker.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/profile.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/education.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1280" selection-start-line="5" selection-start-column="1280" selection-end-line="5" selection-end-column="1280" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>
