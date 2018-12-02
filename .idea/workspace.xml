@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/img/SKings.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="600f293a-d384-4d5e-bfa6-67470f5c0421" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -244,7 +240,7 @@
       <workItem from="1542736069518" duration="746000" />
       <workItem from="1542781855106" duration="2414000" />
       <workItem from="1542871618236" duration="360000" />
-      <workItem from="1543137081744" duration="1169000" />
+      <workItem from="1543137081744" duration="1303000" />
     </task>
     <task id="LOCAL-00001" summary="create timeline component">
       <created>1542617227647</created>
@@ -344,15 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543138360390</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Adding SKings logo as favicon">
+      <created>1543138841403</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1543138841403</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20324000" />
+    <option name="totallyTimeSpent" value="20458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -394,7 +396,8 @@
     <MESSAGE value="fix a lil problem" />
     <MESSAGE value="adding selected course and fix some bugs" />
     <MESSAGE value="change CV" />
-    <option name="LAST_COMMIT_MESSAGE" value="change CV" />
+    <MESSAGE value="Adding SKings logo as favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding SKings logo as favicon" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/main.css">
