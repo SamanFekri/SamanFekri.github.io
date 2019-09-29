@@ -1,7 +1,19 @@
 [
   {
+    "title": "Chief Teaching Assistant, Internet Engineering",
+    "duration": "Sept 2019 - <span class=\"current\"> Current </span>",
+    "subtitle": "Instructor: Prof.Bakhshi",
+    "body": ""
+  },
+  {
     "title": "Instructor, OS Lab",
-    "duration": "Sept 2018 - <span class=\"current\"> Current </span>",
+    "duration": "Sept 2019 - <span class=\"current\"> Current </span>",
+    "subtitle": "Supervisor: Prof.Zarandi",
+    "body": ""
+  },
+  {
+    "title": "Instructor, OS Lab",
+    "duration": "Sept 2018 - Jan 2019",
     "subtitle": "Supervisor: Prof.Zarandi",
     "body": ""
   },
@@ -12,7 +24,7 @@
     "body": "Research and Developing Amirkabir's IoT Platform"
   },
   {
-    "title": "Teaching Assistant, Internet Engineering",
+    "title": "Chief Teaching Assistant, Internet Engineering",
     "duration": "Sept 2017 - Jan 2018",
     "subtitle": "Instructor: Prof.Bakhshi",
     "body": ""
