@@ -1,0 +1,42 @@
+[
+    {
+        "company": "310.ai",
+        "link": "https://310.ai/",
+        "title": "Software Engineer",
+        "date": "Mar 2022 - Now",
+        "location": "USA (Remote)",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li> Integrated huge data from various sources and unified them in the bigquery (+10TB text data)</li><li> Create fetching algorithm to fetch data from huge database in less than 10ms increase speed 80%</li><li> Collaborated to share knowledge and best practices in software development and data handling.</li></ul>"
+    },
+    {
+        "company": "Deesup.com",
+        "link": "https://www.deesup.com/",
+        "title": "Fullstack Engineer",
+        "date": "Jul 2021 - Mar 2022",
+        "location": "Italy",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li> Designed and implemented the new platform architect with typescript, JavaScript</li><li> Improved the latency of loading site from 30s to 1s.</li><li> Mentored newcomers, helping them transition into their roles and gain industry experience.</li></ul>"
+    },
+    {
+        "company": "Sanjagh.com",
+        "link": "https://www.sanjagh.com/",
+        "title": "Software Engineer",
+        "date": "Sep 2018 - Feb 2020",
+        "location": "Iran",
+        "text": "Sanjagh is an Ad-Network like Outbrain, AdRoll and Taboola, built on top of Digital Ocean Cloud Servers.<ul style='list-style: inside; list-style-type: disc;'><li> Led the transition from monolithic to microservices architecture using Golang.</li><li> Implemented a scalable solution, could handle almost 5000qps requests and reducing costs 60%.</li><li> Design the Microservice architecture and work as senior developer.</li><li> Implement some Recommender system Idea’s which improved the CTR of company ~2.5-3 times.</li></ul>"
+    },
+    {
+        "company": "Sanjagh.com",
+        "link": "https://play.google.com/store/apps/details?id=ir.mynal.papillon.papillonchef&hl=en&gl=US&pli=1",
+        "title": "Android Developer",
+        "date": "Feb 2017 - Sep 2018",
+        "location": "Iran",
+        "text": "SarAshpazPapion is a recipe social media app in Iran (+1M Downloads).<ul style='list-style: inside; list-style-type: disc;'><li> Developing a story (like Instagram) feature in this app which increase daily usage of app by 20%.</li><li> Improve the performance of the application and make it more user friendly.</li></ul>"
+    },
+    {
+        "company": "AoLab",
+        "link": "",
+        "title": "Software Engineer",
+        "date": "Sep 2017 - Feb 2018",
+        "location": "Iran",
+        "text": "AOLab was an IoT platform that founded in the Amirkabir University of Technology.<ul style='list-style: inside; list-style-type: disc;'><li> Created platform that you can build your own procedure to do some actions (like shortcut in iOS).</li><li> Working with raspberry pie and sensors and collect their data.</li></ul>"
+    }
+]
