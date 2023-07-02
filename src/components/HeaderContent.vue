@@ -12,7 +12,7 @@
             </div>
         </div>
         <!--mobile-->
-        <div class="flex md:hidden flex-wrap justify-around w-full border-t border-white border-opacity-50 bg-primary-black fixed bottom-0 left-0 py-4">
+        <div class="flex md:hidden flex-wrap justify-around w-full border-t border-white border-opacity-50 bg-primary-black fixed bottom-0 left-0 py-4 z-10">
             <div v-for="(s, id) in sections" :key="`shb_${id}`" class="font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
              :class="{'selected': s, 'not-selected': !s}" :style="cssVars"
              @click="selectSection(id)"
