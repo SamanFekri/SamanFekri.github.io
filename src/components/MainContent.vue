@@ -50,6 +50,9 @@ export default {
             }
             this.sections[section] = true;
         }
+    },
+    mounted() {
+        document.body.classList.add('bg-primary-black')
     }
 }
 </script>
