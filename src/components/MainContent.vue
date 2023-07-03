@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap h-fit bg-white bg-opacity-5 rounded-xl border border-white border-opacity-50">
+    <div class="flex flex-wrap h-fit bg-white bg-opacity-5 rounded-xl border border-white border-opacity-50 bg-primary-black">
         <HeaderContent class="w-full" :title="title" :sections="sections" @select-section="selectSection"/>  
         <AboutContent class="w-full" v-if="sections.About"/>
         <ExperienceContent class="w-full" v-if="sections.Experience"/>
