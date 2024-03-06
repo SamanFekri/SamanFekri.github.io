@@ -28,7 +28,7 @@
         {
             "icon": ["fas", "map-marker-alt"],
             "title": "Location",
-            "text": "Lugano, Switzerland",
+            "text": "Milan, Italy",
             "uri": "https://www.google.com/maps?q=Lugano,+Switzerland"
         }
     ],
