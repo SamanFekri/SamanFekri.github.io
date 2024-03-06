@@ -1,12 +1,12 @@
 {
-    "summary": "Highly experienced software engineer with 8+ years of experience as a freelancer, team member, and team lead. Skilled in designing and implementing robust software systems. Seeking a role that emphasizes teamwork, decision-making, creative problem solving. <br/><br/> In addition to my extensive experience as a software engineer, I have a deep passion for data mining, recommender systems, software engineering, machine learning, and full-stack development. I have dedicated considerable time and effort to gaining expertise in these areas, constantly expanding my knowledge through research, practical projects, and continuous learning.",
+    "summary": "Highly skilled and motivated software engineer passionate about problem solving and creative solutions. Enthusiastic about collaborative teamwork, showcasing strong skills in that domain. Confident in decision-making, with the experience to take on leadership roles within a team. Having a solid foundation in computer science, along with expertise in full-stack development and artificial intelligence. Committed to delivering high-quality code and continuously seeking improvement.",
     "skills": [
-        { "Programming Languages": "Python, GO, NodeJS, JavaScript, Java, ..."},
-        { "Frameworks & Libraries": "sckitlearn, pytorch, nuxt.js, vue.js, tailwindCSS, Bootstrap ..."},
-        { "Databases & Storage": "BigQuery, S3, GCS, SQL, NoSQL, Redis, MongoDB, Cassandra..."},
-        { "DevOps & Deployment": "Linux, Docker, Nginx, HAProxy, Gitlab CI/CD, (learning AWS now), ..."},
-        { "Version Control & Monitoring": "Git, Prometheus, GitLab ..."},
-        { "Messaging Systems": "RabbitMQ, Kafka, ..."},
+        { "Programming Languages": "Python, NodeJS, GO, JavaScript, Java, ..."},
+        { "Frameworks & Libraries": "Vue.js, Angular.js, tailwind css, pytorch, numpy, ..."},
+        { "Databases & Storage": "SQL, Redis, MongoDB, BigQuery, S3, GCS, ..."},
+        { "DevOps & Deployment": "Linux, Docker, Nginx, Github Actions, Microservice, ..."},
+        { "Version Control & Monitoring": "Git, BitBucket, GitLab ..."},
+        { "Messaging Systems": "REST Api, GraphQL, RabbitMQ, ..."},
         { "Other": "Agile, Scrum, Trello, Notion, ..."}
     ],
     "languages": [

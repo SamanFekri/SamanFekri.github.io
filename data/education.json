@@ -5,7 +5,15 @@
         "title": "Politecnico di Milano",
         "date": "Feb 2020 - Sep 2023",
         "location": "Italy",
-        "text": "<ul style='list-style: inside; list-style-type: disc;'><li> Attend courses Datamining, Machine Learning, Data Analytics, Recommender systems, ...</li></ul>"
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Thesis in ControlNet which is an Artificial Intelligence using Long Language Models (LLMs) </li><li>Attend courses Datamining, Machine Learning, Data Analytics, Recommender systems, ...</li></ul>"
+    },
+    {
+        "field": "Computer Science",
+        "link": "https://www.usi.ch/en",
+        "title": "Universita della Svizzera Italiana",
+        "date": "Sep 2022 - Sep 2023",
+        "location": "Switzerland",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Attend Courses Like Data Analytics and Analysis of Social Networks</li><li>Erasmus Program</li></ul>"
     },
     {
         "field": "B.Sc. Computer Science and Engineering",
