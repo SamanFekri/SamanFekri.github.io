@@ -5,15 +5,16 @@
                 <font-awesome-icon :icon="icon" />
             </div>
         </BorderGradiantBox>
-        <div class="flex flex-wrap items-center ml-4">
-            <h2 class="w-full text-xs">{{ title }}</h2>
-            <p class="w-full text-base text-white">{{ text }}</p>
+        <div class="flex flex-wrap items-center ml-4" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+            <h2 ref="personalTitle" class="w-full text-xs">{{ title }}</h2>
+            <p  ref="personalText" class="w-full text-base text-white">{{ text }}</p>
         </div>
     </a>
 </template>
 
 <script>
 import BorderGradiantBox from './BorderGradiantBox.vue';
+import { gsap } from 'gsap'
 
 
 export default{
@@ -40,6 +41,10 @@ export default{
         color: {
             type: String,
             default: '#f3f3f3'
+        },
+        delay: {
+            type: Number,
+            default: 0
         }
     },
     computed:{
@@ -49,6 +54,15 @@ export default{
                 '--color-opacity': `${this.color}0a`
             }
         }
+    },
+    mounted() {
+        gsap.set(this.$refs.personalTitle, {y: '-200%'})
+        gsap.set(this.$refs.personalText, {x: '-200%'})
+        setTimeout(() => {
+            gsap.to(this.$refs.personalTitle, {duration: 0.2, y: '0', ease: 'linear'})
+            gsap.to(this.$refs.personalText, {duration: 0.5, x: '0', ease: 'linear'})
+
+        }, this.delay)
     }
 }
 

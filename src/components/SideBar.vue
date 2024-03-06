@@ -18,6 +18,7 @@
                 :text="item.text"
                 :uri="item.uri"
                 :color="primaryBlue"
+                :delay="id * 500"
             />
         </div>
         <div class="flex flex-wrap justify-center items-center w-full mb-4">
