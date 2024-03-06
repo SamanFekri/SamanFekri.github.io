@@ -21,12 +21,12 @@
                 :delay="id * 500"
             />
         </div>
-        <div class="flex flex-wrap justify-center items-center w-full mb-4">
+        <nav ref="navSocialMedia" class="flex flex-wrap justify-center items-center w-full mb-4">
             <!--link for each brand in socialMedia with its icon-->
-            <a v-for="(item, id) in socialMedia" :key="`sm_${id}`" target="_blank" :href="item.link" class="w-6 h-6 m-1">
-                <font-awesome-icon :icon="item.icon" class="w-full h-full text-white opacity-50 hover:opacity-100 ease-linear duration-300"/>
+            <a v-for="(item, id) in socialMedia" :key="`sm_${id}`" target="_blank" :href="item.link" class="w-6 h-6 m-1" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+                <font-awesome-icon :icon="item.icon" class="w-full h-full text-white opacity-50 hover:opacity-100 ease-linear duration-300 hidden"/>
             </a>
-        </div>
+        </nav>
         <a class="w-full text-center flex justify-center" :href="cta.link" target="_blank">
             <BorderGradiantBox border-radius="15px" class="w-10/12" :center-color="primaryBlue">
                 <div class="w-full h-full flex justify-center items-center text-lg p-4 text-white opacity-50 hover:opacity-100 ease-linear duration-300 card_bg">
@@ -42,6 +42,7 @@
 import BorderGradiantBox from './BorderGradiantBox.vue';
 import PersonalData from './PersonalData.vue';
 import axios from 'axios'
+import { gsap } from 'gsap'
 
 export default{
     components:{
@@ -98,6 +99,19 @@ export default{
                         this.nextProfilePic();
                     }, 2000);
                 }, 1000);
+
+                setTimeout(() => {
+                    // get all svg that are in the navSocialMedia ref
+                    let icons = this.$refs.navSocialMedia.getElementsByTagName('svg')
+                    // for each icon set gsap to +200% in y and then animate to 0 in 0.5s
+                    for (let i = 0; i < icons.length; i++) {
+                        gsap.set(icons[i], {y: '200%', display: 'block'})
+                        setTimeout(() => {
+                            gsap.to(icons[i], {duration: 0.5, y: '0', ease: 'linear'})
+                        }, i * 100)
+                    }
+                }, 1500);
+                
             })
             .catch(error => {
                 console.log(error)
