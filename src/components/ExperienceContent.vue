@@ -1,5 +1,5 @@
 <template>
-    <div  v-if="!isLoading">
+    <div  v-if="!isLoading" class="bg-white bg-opacity-5 bg-primary-black">
         <div class="flex flex-wrap p-8 text-color-paragraph text-opacity-100" >
             <div v-for="item, index in data" :key="'exp-' + index" class="mb-4">
                 <h2 class="font-bold text-xl">{{ item.title }}</h2>

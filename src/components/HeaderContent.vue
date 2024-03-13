@@ -6,8 +6,8 @@
         </div>
         <div class="hidden md:flex flex-wrap justify-around border-l border-b p-4 rounded-bl-xl h-fit bg-white bg-opacity-5 border-white border-opacity-50">
             <div v-for="(s, id) in sections" :key="`sht_${id}`" class="font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
-             :class="{'selected': s, 'not-selected': !s}" :style="cssVars"
-             @click="selectSection(id)">
+             :class="{'selected': s.visible, 'not-selected': !s.visible}" :style="cssVars"
+             @click="selectSection(s)">
                 {{ id }}
             </div>
         </div>

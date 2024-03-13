@@ -1,5 +1,5 @@
 <template>
-    <div  v-if="!isLoading">
+    <div  v-if="!isLoading" class="bg-white bg-opacity-5 bg-primary-black">
         <div class="flex flex-wrap p-8 text-color-paragraph text-opacity-100" >
             <div class="w-full">
                 <SectionHeader title="Personal Projects" class="mb-3"/>
