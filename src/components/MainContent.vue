@@ -65,7 +65,7 @@ export default {
                 });
                 setTimeout(() => {
                     gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
-                }, 10);
+                }, 100);
             }, 500);
         }
     },
@@ -76,7 +76,7 @@ export default {
             setTimeout(() => {
                 const tempSection = this.$refs[s.id].$el;
                 gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
-            }, 10);
+            }, 100);
         });
     }
 }
