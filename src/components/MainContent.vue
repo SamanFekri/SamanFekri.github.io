@@ -64,7 +64,7 @@ export default {
                     s.visible = false;
                 });
                 setTimeout(() => {
-                    gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.5, ease: 'linear'});
+                    gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
                 }, 10);
             }, 500);
         }

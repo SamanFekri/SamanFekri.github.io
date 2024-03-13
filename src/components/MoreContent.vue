@@ -62,7 +62,6 @@ export default{
         axios.get('./data/more.json')
             .then(response => {
                 this.data = response.data;
-                console.log(this.data);
                 this.isLoading = false;
             })
             .catch(error => {

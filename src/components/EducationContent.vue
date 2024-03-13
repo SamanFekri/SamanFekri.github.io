@@ -54,7 +54,6 @@ export default{
         axios.get('./data/education.json')
             .then(response => {
                 this.data = response.data;
-                console.log(this.data);
                 this.isLoading = false;
             })
             .catch(error => {

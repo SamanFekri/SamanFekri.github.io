@@ -85,7 +85,6 @@ export default{
     mounted() {
         axios.get('./data/personal.json')
             .then(response => {
-                console.log(response.data)
                 this.profilePics = response.data.pics;
                 this.name = `${response.data.firstName} ${response.data.lastName}`;
                 this.bio = response.data.bio;

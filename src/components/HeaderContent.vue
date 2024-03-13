@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-wrap justify-between">
-        <div class="flex flex-wrap flex-col	justify-between px-8">
-            <h1 class="text-white font-bold text-2xl my-4">{{ title }}</h1>
-            <div class="w-16 h-1 bg-primary-blue rounded"></div>
+        <div class="flex flex-wrap flex-col justify-between px-8" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+            <h1 ref="sectionTitle" class="text-white font-bold text-2xl my-4">{{ title }}</h1>
+            <div ref="dividerTitle" class="w-16 h-1 bg-primary-blue rounded"></div>
         </div>
         <div class="hidden md:flex flex-wrap justify-around border-l border-b p-4 rounded-bl-xl h-fit bg-white bg-opacity-5 border-white border-opacity-50">
             <div v-for="(s, id) in sections" :key="`sht_${id}`" class="font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
 export default{
     props: {
         title: {
@@ -50,9 +51,19 @@ export default{
         selectSection(section) {
             this.$emit('select-section', section)
         }
+    },
+    watch: {
+        title(newTitle) {
+            gsap.to(this.$refs.dividerTitle, {y: '-200%', duration: 0.3, ease: 'linear'}).then(() => {
+                gsap.to(this.$refs.dividerTitle, {y: '0%', duration: 0.5, ease: 'linear'});
+            });
+            gsap.to(this.$refs.sectionTitle, {x: '-150%', duration: 0.3, ease: 'linear'}).then(() => {
+                this.$refs.sectionTitle.innerText = newTitle;
+                gsap.to(this.$refs.sectionTitle, {x: '0%', duration: 0.5, ease: 'linear'});
+            });
+        }
     }
 }
-
 </script>
 
 <style scoped>
