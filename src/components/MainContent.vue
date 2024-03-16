@@ -64,8 +64,15 @@ export default {
                     s.visible = false;
                 });
                 setTimeout(() => {
-                    gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
-                }, 100);
+                    try {
+                        gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
+                    } catch (error) {
+                        console.log(error);
+                        setTimeout(() => {
+                            gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
+                        }, 500);
+                    }
+                }, 500);
             }, 500);
         }
     },
@@ -74,11 +81,22 @@ export default {
         const allVisibleSections = Object.values(this.sections).filter(s => s.visible);
         allVisibleSections.forEach(s => {
             setTimeout(() => {
-                const tempSection = this.$refs[s.id].$el;
-                gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
-            }, 100);
+                try {
+                    const tempSection = this.$refs[s.id].$el;
+                    gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
+                } catch (error) {
+                    console.log(error);
+                    setTimeout(() => {
+                        const tempSection = this.$refs[s.id].$el;
+                        gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
+                    }, 1000);
+                }
+
+            }, 500);
         });
-    }
+    }, 
+    // After view init, animate the sections in
+
 }
 </script>
 <style scoped>
