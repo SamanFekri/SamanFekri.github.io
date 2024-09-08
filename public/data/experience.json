@@ -1,5 +1,13 @@
 [
     {
+        "company": "Minerva Technologies",
+        "link": "https://minervatechnologies.it/",
+        "title": "Software Engineer",
+        "date": "Oct 2023 - Jun 2024",
+        "location": "Italy",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'> <li> it uses advanced algorithms and quantitative analyses to make informed strategic and tactical decisions. Implement algorithms that backtesting shows improve in profits.</li></ul>"
+    },
+    {
         "company": "310.ai",
         "link": "https://310.ai/",
         "title": "Software Engineer",
