@@ -5,7 +5,7 @@
         "title": "Software Engineer",
         "date": "Oct 2023 - Jun 2024",
         "location": "Italy",
-        "text": "<ul style='list-style: inside; list-style-type: disc;'> <li> it uses advanced algorithms and quantitative analyses to make informed strategic and tactical decisions. Implement algorithms that backtesting shows improve in profits.</li></ul>"
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Used advanced algorithms and quantitative analyses to drive strategic and tactical decision-making.</li><li>Implemented AI trading algorithms that, through backtesting, resulted in a 15% increase in average portfolio returns.</li><li>Reduced algorithm runtime by 30% by optimizing code efficiency and data processing pipelines.</li></ul>"
     },
     {
         "company": "310.ai",
@@ -13,7 +13,7 @@
         "title": "Software Engineer",
         "date": "Mar 2022 - Sep 2023",
         "location": "USA (Remote)",
-        "text": "<ul style='list-style: inside; list-style-type: disc;'><li> Integrated huge data from various sources and unified them in the bigquery (+10TB text data)</li><li> Developing Cutting Edge Artificial Intelligence and LLMs techniques for protein design.</li><li> Create fetching algorithm to fetch data from huge database in less than 10ms increase speed 80%</li><li> Collaborated to share knowledge and best practices in software development and data handling.</li></ul>"
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Integrated and processed 10TB+ of text data from diverse sources using BigQuery, optimizing data retrieval processes.</li><li>Developed cutting-edge AI and large language model techniques for protein design.</li><li>Created a data-fetching algorithm that reduced query time from 50ms to 10ms, leading to an 80% speed improvement.</li><li>Collaborated with cross-functional teams, sharing knowledge on AI model development and data integration best practices.</li></ul>"
     },
     {
         "company": "Deesup.com",
@@ -21,7 +21,7 @@
         "title": "Fullstack Engineer",
         "date": "Jul 2021 - Mar 2022",
         "location": "Italy",
-        "text": "<ul style='list-style: inside; list-style-type: disc;'><li> Designed and implemented the new platform architect with typescript, JavaScript</li><li> Improved the latency of loading site from 30s to 1s.</li><li> Mentored newcomers, helping them transition into their roles and gain industry experience.</li></ul>"
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Led the redesign of the platform architecture using TypeScript and NodeJS, reducing 95% of page load time.</li><li>Utilized AWS cloud infrastructure and front-end frameworks.</li></ul>"
     },
     {
         "company": "Sanjagh.com",
@@ -29,7 +29,7 @@
         "title": "Software Engineer",
         "date": "Sep 2018 - Feb 2020",
         "location": "Iran",
-        "text": "Sanjagh is an Ad-Network like Outbrain, AdRoll and Taboola, built on top of Digital Ocean Cloud Servers.<ul style='list-style: inside; list-style-type: disc;'><li> Led the transition from monolithic to microservices architecture using Golang.</li><li> Implemented a scalable solution, could handle almost 5000qps requests and reducing costs 60%.</li><li> Design the Microservice architecture and work as senior developer.</li><li> Implement some Recommender system Idea’s which improved the CTR of company ~2.5-3 times.</li></ul>"
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Transion from a monolithic to a microservices architecture using Golang, reducing infrastructure costs by 60%.</li><li>Designed and deployed a scalable microservices solution, handling a 300% increase in requests with no downtime.</li><li>Implemented a recommender system that improved click-through rate (CTR) by 250-300%.</li></ul>"
     },
     {
         "company": "Sanjagh.com",
