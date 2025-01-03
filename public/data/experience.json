@@ -1,8 +1,16 @@
 [
     {
+        "company": "Klear Finance",
+        "link": "https://klearfinance.com/",
+        "title": "Fullstack Engineer",
+        "date": "Oct 2024 - now",
+        "location": "Italy",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Developed KlearFinance website using <b>Django</b>, <b>Vue.js</b>, and <b>Docker</b>.</li><li>Designed and optimized the software architecture for scalability and performance.</li></ul>"
+    },
+    {
         "company": "Minerva Technologies",
         "link": "https://minervatechnologies.it/",
-        "title": "Software Engineer",
+        "title": "Fullstack Engineer",
         "date": "Oct 2023 - Jun 2024",
         "location": "Italy",
         "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Used advanced algorithms and quantitative analyses to drive strategic and tactical decision-making.</li><li>Implemented AI trading algorithms that, through backtesting, resulted in a 15% increase in average portfolio returns.</li><li>Reduced algorithm runtime by 30% by optimizing code efficiency and data processing pipelines.</li></ul>"
@@ -32,7 +40,7 @@
         "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Transion from a monolithic to a microservices architecture using Golang, reducing infrastructure costs by 60%.</li><li>Designed and deployed a scalable microservices solution, handling a 300% increase in requests with no downtime.</li><li>Implemented a recommender system that improved click-through rate (CTR) by 250-300%.</li></ul>"
     },
     {
-        "company": "Sanjagh.com",
+        "company": "sarashpazpapion.com",
         "link": "https://play.google.com/store/apps/details?id=ir.mynal.papillon.papillonchef&hl=en&gl=US&pli=1",
         "title": "Android Developer",
         "date": "Feb 2017 - Sep 2018",

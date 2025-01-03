@@ -29,7 +29,7 @@
             "icon": ["fas", "map-marker-alt"],
             "title": "Location",
             "text": "Milan, Italy",
-            "uri": "https://www.google.com/maps?q=Lugano,+Switzerland"
+            "uri": "https://www.google.com/maps?q=Milan,+Italy"
         }
     ],
     "socialMedia": [
@@ -47,7 +47,7 @@
         },
         {
             "icon": ["fab", "instagram"],
-            "link": "https://www.instagram.com/lordsaman/"
+            "link": "https://www.instagram.com/saman.fkri/"
         }
     ],
     "cta": {
