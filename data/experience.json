@@ -1,9 +1,17 @@
 [
     {
+        "company": "Capgemini",
+        "link": "https://capgemini.com/",
+        "title": "Software Engineer",
+        "date": "Feb 2025 - now",
+        "location": "Italy",
+        "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Designed and implemented <i><b>federation management services</b></i> between telecom operators using <b>Go (Golang)</b>.</li><li>Automated deployment of <b>microservices</b> using <b>GitHub Actions</b>, <b>Docker</b>, and <b>Kubernetes</b>.</li></ul>"
+    },
+    {
         "company": "Klear Finance",
         "link": "https://klearfinance.com/",
         "title": "Fullstack Engineer",
-        "date": "Oct 2024 - now",
+        "date": "Oct 2024 - Jan 2025",
         "location": "Italy",
         "text": "<ul style='list-style: inside; list-style-type: disc;'><li>Developed KlearFinance website using <b>Django</b>, <b>Vue.js</b>, and <b>Docker</b>.</li><li>Designed and optimized the software architecture for scalability and performance.</li></ul>"
     },
