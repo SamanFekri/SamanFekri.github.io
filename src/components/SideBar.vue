@@ -1,8 +1,24 @@
 <template>
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
-        <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
-            <img :src="profilePics[profilePicIndex]"/>
-        </BorderGradiantBox>
+        <div class="relative">
+            <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
+                <img :src="profilePics[profilePicIndex]"/>
+            </BorderGradiantBox>
+            <div class="relative group">
+                <img src="https://moodpal.samanfekri.me/user/82768138/mood/animated" 
+                    class="absolute right-0 bottom-4 hover:cursor-pointer" 
+                    width="32" height="32" alt="Saman's Mood"
+                />
+                <div class="absolute right-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                    Saman's current mood.
+                    <span class="flex items-center text-[0.5rem]">
+                        <a href="https://t.me/MoodPalBot" target="_blank" class="text-blue-400" >
+                           <font-awesome-icon :icon="['fab', 'telegram']" />  @MoodPalBot 
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
         <div class="w-full text-center text-white">
             <h1 class="text-2xl font-bold">{{name}}</h1>
         </div>
