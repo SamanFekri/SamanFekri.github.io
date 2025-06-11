@@ -5,12 +5,15 @@
                 <img :src="profilePics[profilePicIndex]"/>
             </BorderGradiantBox>
             <div class="relative group">
-                <img src="https://moodpal.samanfekri.me/user/82768138/mood/animated" 
+                <!-- <img src="https://moodpal.samanfekri.me/user/82768138/mood/animated" 
                     class="absolute right-0 bottom-4 hover:cursor-pointer" 
-                    width="32" height="32" alt="Saman's Mood"
-                />
+                    width="32" height="32" :alt="`${name}'s current mood`"
+                /> -->
+                <mood-pal src="https://moodpal.samanfekri.me/user/82768138/mood/tgs" 
+                    class="absolute right-0 bottom-4 hover:cursor-pointer w-[32px] h-[32px]"></mood-pal>
+                     
                 <div class="absolute right-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                    Saman's current mood.
+                    {{ name }}'s current mood.
                     <span class="flex items-center text-[0.5rem]">
                         <a href="https://t.me/MoodPalBot" target="_blank" class="text-blue-400" >
                            <font-awesome-icon :icon="['fab', 'telegram']" />  @MoodPalBot 
