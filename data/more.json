@@ -1,13 +1,50 @@
 {
     "projects": [
         {
+            "title": "SamDrive (Patente B)",
+            "tagline": "Persian prep for the Italian driving theory exam",
+            "tags": [
+                "Web App",
+                "AI",
+                "Education"
+            ],
+            "link": "https://patente.samanfekri.me",
+            "linkLabel": "Visit site",
+            "text": "<ul style='list-style: inside; list-style-type: disc;'><li> A free platform for Persian speakers to prepare for the Italian driving theory exam (Patente B).</li><li> About 7,100 official questions with Persian translations, 400+ road signs and a saveable Italian to Persian vocabulary list.</li><li> Timed mock exams (30 questions in 20 minutes), progress tracking across 25 topics and an AI assistant that explains answers in simple Persian.</li></ul>"
+        },
+        {
+            "title": "Mood Pal",
+            "tagline": "Mood tracking and daily check-ins on Telegram",
+            "tags": [
+                "Telegram Bot",
+                "Wellbeing"
+            ],
+            "link": "https://t.me/MoodPalBot",
+            "linkLabel": "Open in Telegram",
+            "linkIcon": [
+                "fab",
+                "telegram"
+            ],
+            "text": "<ul style='list-style: inside; list-style-type: disc;'><li> A Telegram bot that helps people track their mood and understand their emotions.</li><li> Sends daily reminders to check in.</li><li> It also exposes each user's current mood as an animated sticker, the one you see next to my photo on this page.</li></ul>"
+        },
+        {
             "title": "Italy Market",
-            "link": "https://github.com/SamanFekri/ItalyMarketBot",
+            "tagline": "Marketplace bot for the Iranian community in Italy",
+            "tags": [
+                "Telegram Bot",
+                "Community"
+            ],
+            "source": "https://github.com/SamanFekri/ItalyMarketBot",
             "text": "<ul style='list-style: inside; list-style-type: disc;'><li> I developed a Telegram bot platform</li><li> It used in the most popular channels for Iranian in Italy to exchange their goods and services.</li><li> I have developed a telegram bot to help them to find their needs easily.</li></ul>"
         },
         {
             "title": "Italy Covid",
-            "link": "https://github.com/SamanFekri/ItalyCovid19",
+            "tagline": "Daily COVID-19 case prediction for Italy",
+            "tags": [
+                "Time Series",
+                "Data Science"
+            ],
+            "source": "https://github.com/SamanFekri/ItalyCovid19",
             "text": "<ul style='list-style: inside; list-style-type: disc;'><li> I developed a covid case prediction for Italy that used time series online algorithms</li><li> I't predict daily covid cases in Italy with 5% error.</li><li> Source of data was from health ministery of Italy</li></ul>"
         }
     ],
