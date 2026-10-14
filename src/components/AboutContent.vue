@@ -23,7 +23,8 @@
                     <div class="w-full">
                         <ul class="list-inside">
                             <li class="my-2" v-for="item in data.languages" :key="item">
-                                <span class="font-bold">{{ item.flag }} {{ item.name }}:</span> {{ item.level }}
+                                <FlagWave :src="item.flag" :label="`${item.name} flag`"/>
+                                <span class="font-bold">{{ item.name }}:</span> {{ item.level }}
                             </li>
                         </ul>
                     </div>
@@ -35,11 +36,13 @@
 
 <script>
 import SectionHeader from './SectionHeader.vue';
+import FlagWave from './FlagWave.vue';
 import { loadData } from '../data.js'
 
 export default{
     components: {
-        SectionHeader
+        SectionHeader,
+        FlagWave
     },
     emits: ['loaded', 'select-section'],
     props: {

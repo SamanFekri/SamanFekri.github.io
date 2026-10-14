@@ -12,17 +12,17 @@
     "languages": [
         {
             "name": "English",
-            "flag": "🇺🇸",
+            "flag": "flags/us.svg",
             "level": "Advanced"
         },
         {
             "name": "Italian",
-            "flag": "🇮🇹",
+            "flag": "flags/it.svg",
             "level": "Working Proficiency"
         },
         {
             "name": "Persian",
-            "flag": "🇮🇷",
+            "flag": "flags/ir-lion-sun.svg",
             "level": "Native"
         }
     ]
