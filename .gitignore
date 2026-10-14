@@ -7,3 +7,5 @@ node_modules/
 .DS_Store
 
 dist/
+# graphify knowledge graph (local only)
+graphify-out/
