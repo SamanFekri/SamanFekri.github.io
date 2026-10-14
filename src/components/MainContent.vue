@@ -49,7 +49,7 @@ export default {
     methods: {
         slideIn(section) {
             // called once the section has loaded its data and rendered its real element
-            gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
+            gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.6, ease: 'power3.out'});
         },
         selectSection(section) {
             // if the section is already visible, do nothing
@@ -59,15 +59,15 @@ export default {
             // get the sections from ref and their id
             allVisibleSections.forEach(s => {
                 const tempSection = this.$refs[s.id].$el;
-                gsap.to(tempSection, {y: '-98%', duration: 0.5, ease: 'linear'});
+                gsap.to(tempSection, {y: '-98%', duration: 0.3, ease: 'power2.in'});
             });
-            // after 0.5s, set the current section to visible, it slides in from slideIn when loaded
+            // after 0.3s, set the current section to visible, it slides in from slideIn when loaded
             setTimeout(() => {
                 section.visible = true;
                 allVisibleSections.forEach(s => {
                     s.visible = false;
                 });
-            }, 500);
+            }, 300);
         }
     },
     mounted() {

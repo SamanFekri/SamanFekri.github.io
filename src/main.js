@@ -11,12 +11,12 @@ import 'tailwindcss/tailwind.css'
 // import '@fortawesome/fontawesome-free/css/all.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faEnvelope, faBirthdayCake, faMapMarkerAlt, faMobileAlt, faMobileButton, faMobileScreenButton, faArrowDown, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faBirthdayCake, faMapMarkerAlt, faMobileAlt, faMobileButton, faMobileScreenButton, faArrowDown, faCalendar, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faGithub, faInstagram, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faEnvelope, faBirthdayCake, faMapMarkerAlt, faMobileAlt, faMobileButton, faMobileScreenButton,  faTwitter, faGithub, faInstagram, faLinkedin, faArrowDown, faCalendar, faTelegram)
+library.add(faEnvelope, faBirthdayCake, faMapMarkerAlt, faMobileAlt, faMobileButton, faMobileScreenButton,  faTwitter, faGithub, faInstagram, faLinkedin, faArrowDown, faCalendar, faTelegram, faArrowUpRightFromSquare)
 
 const app = createApp(App)
 

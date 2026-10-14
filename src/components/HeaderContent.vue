@@ -54,12 +54,12 @@ export default{
     },
     watch: {
         title(newTitle) {
-            gsap.to(this.$refs.dividerTitle, {y: '-200%', duration: 0.3, ease: 'linear'}).then(() => {
-                gsap.to(this.$refs.dividerTitle, {y: '0%', duration: 0.5, ease: 'linear'});
+            gsap.to(this.$refs.dividerTitle, {y: '-200%', duration: 0.25, ease: 'power2.in'}).then(() => {
+                gsap.to(this.$refs.dividerTitle, {y: '0%', duration: 0.45, ease: 'power3.out'});
             });
-            gsap.to(this.$refs.sectionTitle, {x: '-150%', duration: 0.3, ease: 'linear'}).then(() => {
+            gsap.to(this.$refs.sectionTitle, {x: '-150%', duration: 0.25, ease: 'power2.in'}).then(() => {
                 this.$refs.sectionTitle.innerText = newTitle;
-                gsap.to(this.$refs.sectionTitle, {x: '0%', duration: 0.5, ease: 'linear'});
+                gsap.to(this.$refs.sectionTitle, {x: '0%', duration: 0.45, ease: 'power3.out'});
             });
         }
     }

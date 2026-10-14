@@ -3,12 +3,19 @@
         <div class="flex flex-wrap p-8 text-color-paragraph text-opacity-100" >
             <div class="w-full">
                 <SectionHeader title="Personal Projects" class="mb-3"/>
-                <div v-for="item, index in data.projects" :key="'pp-' + index" class="mb-4">
-                    <a :href="item.link" v-if="item.link" class="hover:text-primary-blue cursor-pointer ease-linear duration-300">
-                        <h2 class="font-bold text-xl">{{ item.title }}</h2>
-                    </a>
-                    <h2 class="font-bold text-xl" v-else>{{ item.title }}</h2>
+                <div v-for="item, index in data.projects" :key="'pp-' + index" class="mb-6">
+                    <div class="flex flex-wrap items-baseline gap-x-4">
+                        <h2 class="font-bold text-xl text-white">{{ item.title }}</h2>
+                        <a v-if="item.link" :href="item.link" target="_blank" rel="noopener" class="text-sm hover:text-primary-blue ease-out duration-200">
+                            <font-awesome-icon :icon="item.linkIcon || ['fas', 'arrow-up-right-from-square']" class="mr-1"/>{{ item.linkLabel || 'Visit' }}
+                        </a>
+                        <a v-if="item.source" :href="item.source" target="_blank" rel="noopener" class="text-sm hover:text-primary-blue ease-out duration-200">
+                            <font-awesome-icon :icon="['fab', 'github']" class="mr-1"/>Source
+                        </a>
+                    </div>
+                    <p v-if="item.tagline" class="text-primary-blue mb-2">{{ item.tagline }}</p>
                     <p v-html="item.text" class="text-left"></p>
+                    <p v-if="item.tags" class="text-sm text-white text-opacity-50 mt-2">{{ item.tags.join(' · ') }}</p>
                 </div>
             </div>
             <div class="w-full">
@@ -33,7 +40,7 @@
 
 <script>
 import SectionHeader from './SectionHeader.vue';
-import axios from 'axios'
+import { loadData } from '../data.js'
 
 export default{
     components: {
@@ -60,9 +67,9 @@ export default{
         }
     },
     mounted() {
-        axios.get('./data/more.json')
-            .then(response => {
-                this.data = response.data;
+        loadData('more')
+            .then(data => {
+                this.data = data;
                 this.isLoading = false;
                 this.$nextTick(() => this.$emit('loaded'));
             })

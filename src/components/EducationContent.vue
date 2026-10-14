@@ -25,7 +25,7 @@
 
 <script>
 import SectionHeader from './SectionHeader.vue';
-import axios from 'axios'
+import { loadData } from '../data.js'
 
 export default{
     components: {
@@ -52,9 +52,9 @@ export default{
         }
     },
     mounted() {
-        axios.get('./data/education.json')
-            .then(response => {
-                this.data = response.data;
+        loadData('education')
+            .then(data => {
+                this.data = data;
                 this.isLoading = false;
                 this.$nextTick(() => this.$emit('loaded'));
             })

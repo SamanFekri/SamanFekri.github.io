@@ -125,7 +125,7 @@ export default{
                     for (let i = 0; i < icons.length; i++) {
                         gsap.set(icons[i], {y: '200%', display: 'block'})
                         setTimeout(() => {
-                            gsap.to(icons[i], {duration: 0.5, y: '0', ease: 'linear'})
+                            gsap.to(icons[i], {duration: 0.5, y: '0', ease: 'power3.out'})
                         }, i * 100)
                     }
                 }, 1500);
