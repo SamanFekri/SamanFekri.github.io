@@ -2,7 +2,8 @@
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
         <div class="relative">
             <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
-                <img :src="profilePics[profilePicIndex]"/>
+                <video v-if="isVideo(currentPic)" :src="currentPic" class="translate-x-2 translate-y-3" autoplay muted loop playsinline :aria-label="name"></video>
+                <img v-else :src="currentPic" :alt="name"/>
             </BorderGradiantBox>
             <div class="relative group">
                 <!-- <img src="https://moodpal.samanfekri.me/user/82768138/mood/animated" 
@@ -84,6 +85,12 @@ export default{
         }
     },
     computed: {
+        currentPic() {
+            const pic = this.profilePics[this.profilePicIndex];
+            // safari can not show webm transparency and reduced motion should not animate, both use the still png
+            if (pic && this.isVideo(pic) && !this.canPlayAlphaVideo()) return this.stillOf(pic);
+            return pic;
+        },
         cssVars() {
             return {
                 '--pic-rotation': `${this.profilePicDegree}deg`,
@@ -91,6 +98,18 @@ export default{
         }
     },
     methods: {
+        isVideo(pic) {
+            return /\.webm$/i.test(pic || '');
+        },
+        stillOf(pic) {
+            return pic.replace(/\.webm$/i, '.png');
+        },
+        canPlayAlphaVideo() {
+            const ua = navigator.userAgent;
+            const isSafari = /Safari/.test(ua) && !/Chrome|Chromium|CriOS|FxiOS|EdgiOS|Android/.test(ua);
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            return !isSafari && !reducedMotion;
+        },
         nextProfilePic(){
             this.profilePicDegree = (this.profilePicDegree + 180) % 360 ;
             setTimeout(() => {
