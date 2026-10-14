@@ -22,6 +22,8 @@
                     </span>
                 </div>
             </div>
+            <!--mirror of the mood: time of day and weather of my location-->
+            <WeatherBadge v-if="location" :location="location"/>
         </div>
         <div class="w-full text-center text-white">
             <h1 class="text-2xl font-bold">{{name}}</h1>
@@ -61,13 +63,15 @@
 <script>
 import BorderGradiantBox from './BorderGradiantBox.vue';
 import PersonalData from './PersonalData.vue';
+import WeatherBadge from './WeatherBadge.vue';
 import axios from 'axios'
 import { gsap } from 'gsap'
 
 export default{
     components:{
         BorderGradiantBox,
-        PersonalData
+        PersonalData,
+        WeatherBadge
     },
     data() {
         return {
@@ -85,6 +89,10 @@ export default{
         }
     },
     computed: {
+        location() {
+            const item = this.data.find(d => d.title === 'Location');
+            return item ? item.text : '';
+        },
         currentPic() {
             const pic = this.profilePics[this.profilePicIndex];
             // safari can not show webm transparency and reduced motion should not animate, both use the still png
