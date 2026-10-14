@@ -39,6 +39,7 @@ export default{
     components: {
         SectionHeader
     },
+    emits: ['loaded'],
     props: {
         primaryColor: {
             type: String,
@@ -63,6 +64,7 @@ export default{
             .then(response => {
                 this.data = response.data;
                 this.isLoading = false;
+                this.$nextTick(() => this.$emit('loaded'));
             })
             .catch(error => {
                 console.log(error);

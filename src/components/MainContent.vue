@@ -1,11 +1,11 @@
 <template>
     <div class="flex flex-wrap h-fit ">
         <HeaderContent class="w-full bg-white bg-opacity-5 bg-primary-black rounded-t-xl border-t border-r border-l border-white border-opacity-50" :title="title" :sections="sections" @select-section="selectSection"/>  
-        <div class="w-full" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
-            <AboutContent :ref="sections.About.id" class="section-content" v-if="sections.About.visible"/>
-            <ExperienceContent :ref="sections.Experience.id" class="section-content" v-if="sections.Experience.visible"/>
-            <EducationContent :ref="sections.Education.id" class="section-content" v-if="sections.Education.visible"/>
-            <MoreContent  :ref="sections.More.id" class="section-content" v-if="sections.More.visible"/>
+        <div class="w-full" style="clip-path: inset(0 -4px -4px -4px);">
+            <AboutContent :ref="sections.About.id" class="section-content" v-if="sections.About.visible" @loaded="slideIn(sections.About)"/>
+            <ExperienceContent :ref="sections.Experience.id" class="section-content" v-if="sections.Experience.visible" @loaded="slideIn(sections.Experience)"/>
+            <EducationContent :ref="sections.Education.id" class="section-content" v-if="sections.Education.visible" @loaded="slideIn(sections.Education)"/>
+            <MoreContent  :ref="sections.More.id" class="section-content" v-if="sections.More.visible" @loaded="slideIn(sections.More)"/>
         </div>
     </div>
 </template>
@@ -47,6 +47,10 @@ export default {
         }
     },
     methods: {
+        slideIn(section) {
+            // called once the section has loaded its data and rendered its real element
+            gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
+        },
         selectSection(section) {
             // if the section is already visible, do nothing
             if (section.visible) return;
@@ -57,46 +61,18 @@ export default {
                 const tempSection = this.$refs[s.id].$el;
                 gsap.to(tempSection, {y: '-98%', duration: 0.5, ease: 'linear'});
             });
-            // after 0.5s, set the current section to visible
+            // after 0.5s, set the current section to visible, it slides in from slideIn when loaded
             setTimeout(() => {
                 section.visible = true;
                 allVisibleSections.forEach(s => {
                     s.visible = false;
                 });
-                setTimeout(() => {
-                    try {
-                        gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
-                    } catch (error) {
-                        console.log(error);
-                        setTimeout(() => {
-                            gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.75, ease: 'linear'});
-                        }, 500);
-                    }
-                }, 500);
             }, 500);
         }
     },
     mounted() {
         document.body.classList.add('bg-primary-black')
-        const allVisibleSections = Object.values(this.sections).filter(s => s.visible);
-        allVisibleSections.forEach(s => {
-            setTimeout(() => {
-                try {
-                    const tempSection = this.$refs[s.id].$el;
-                    gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
-                } catch (error) {
-                    console.log(error);
-                    setTimeout(() => {
-                        const tempSection = this.$refs[s.id].$el;
-                        gsap.to(tempSection, {y: '0', duration: 1, ease: 'linear'});
-                    }, 1000);
-                }
-
-            }, 500);
-        });
-    }, 
-    // After view init, animate the sections in
-
+    }
 }
 </script>
 <style scoped>
