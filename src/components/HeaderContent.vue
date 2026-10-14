@@ -12,14 +12,14 @@
             </div>
         </div>
         <!--mobile-->
-        <div class="flex md:hidden flex-wrap justify-around w-full border-t border-white border-opacity-50 bg-primary-black fixed bottom-0 left-0 py-4 z-10">
-            <div v-for="(s, id) in sections" :key="`shb_${id}`" class="tab flex flex-col items-center text-sm font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
+        <nav class="mobile-bar flex md:hidden w-full border-t border-white border-opacity-20 fixed bottom-0 left-0 z-10">
+            <div v-for="(s, id) in sections" :key="`shb_${id}`" class="tab flex-1 flex flex-col items-center justify-center min-h-[48px] py-1 text-[0.68rem] font-semibold leading-tight hover:cursor-pointer ease-linear duration-300"
              :class="{'selected': s.visible, 'not-selected': !s.visible}" :style="cssVars"
              @click="selectSection(s)"
              >
-                <TabIcon v-if="s.icon" :name="s.icon" class="text-xl mb-1"/>{{ id  }}
+                <TabIcon v-if="s.icon" :name="s.icon" class="text-[0.85rem] mb-0.5"/>{{ id  }}
             </div>
-        </div>
+        </nav>
     </div>
 </template>
 
@@ -78,8 +78,18 @@ export default{
 .not-selected {
     color: #ffffff9a;
 }
-.not-selected:hover {
-    color: #ffffff4d;
+@media (hover: hover) {
+    .not-selected:hover {
+        color: #ffffff4d;
+    }
+}
+.tab {
+    -webkit-tap-highlight-color: transparent;
+}
+.mobile-bar {
+    background: rgb(24 24 24 / 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 .tab :deep(.tab-icon) {
     transition: transform 200ms ease-out, filter 300ms ease-out;
