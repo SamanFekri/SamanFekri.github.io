@@ -1,6 +1,16 @@
 {
     "projects": [
         {
+            "title": "SamDrive (Patente B)",
+            "link": "https://patente.samanfekri.me",
+            "text": "<ul style='list-style: inside; list-style-type: disc;'><li> A free platform for Persian speakers to prepare for the Italian driving theory exam (Patente B).</li><li> About 7,100 official questions with Persian translations, 400+ road signs and a saveable Italian to Persian vocabulary list.</li><li> Timed mock exams (30 questions in 20 minutes), progress tracking across 25 topics and an AI assistant that explains answers in simple Persian.</li></ul>"
+        },
+        {
+            "title": "Mood Pal",
+            "link": "https://t.me/MoodPalBot",
+            "text": "<ul style='list-style: inside; list-style-type: disc;'><li> A Telegram bot that helps people track their mood and understand their emotions.</li><li> Sends daily reminders to check in.</li><li> It also exposes each user's current mood as an animated sticker, the one you see next to my photo on this page.</li></ul>"
+        },
+        {
             "title": "Italy Market",
             "link": "https://github.com/SamanFekri/ItalyMarketBot",
             "text": "<ul style='list-style: inside; list-style-type: disc;'><li> I developed a Telegram bot platform</li><li> It used in the most popular channels for Iranian in Italy to exchange their goods and services.</li><li> I have developed a telegram bot to help them to find their needs easily.</li></ul>"
