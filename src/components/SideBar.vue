@@ -2,7 +2,7 @@
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
         <div class="relative">
             <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
-                <video v-if="isVideo(currentPic)" :src="currentPic" class="translate-x-2 translate-y-3" autoplay muted loop playsinline :aria-label="name"></video>
+                <video v-if="isVideo(currentPic)" :src="currentPic" class="translate-x-2 translate-y-3" autoplay muted loop playsinline :aria-label="name" @canplay="playVideo" @error="videoFailed = true"></video>
                 <img v-else :src="currentPic" :alt="name"/>
             </BorderGradiantBox>
             <div class="relative group">
@@ -85,7 +85,8 @@ export default{
             name: '',
             data: [],
             socialMedia: [],
-            cta: {}
+            cta: {},
+            videoFailed: false
         }
     },
     computed: {
@@ -95,9 +96,11 @@ export default{
         },
         currentPic() {
             const pic = this.profilePics[this.profilePicIndex];
-            // safari can not show webm transparency and reduced motion should not animate, both use the still png
-            if (pic && this.isVideo(pic) && !this.canPlayAlphaVideo()) return this.stillOf(pic);
-            return pic;
+            if (!pic || !this.isVideo(pic)) return pic;
+            // reduced motion, or a video that can not play, shows the still png
+            if (this.videoFailed || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return this.stillOf(pic);
+            // safari engine can not show webm transparency, it gets the hevc with alpha .mov instead
+            return this.isAppleWebKit() ? pic.replace(/\.webm$/i, '.mov') : pic;
         },
         cssVars() {
             return {
@@ -107,16 +110,22 @@ export default{
     },
     methods: {
         isVideo(pic) {
-            return /\.webm$/i.test(pic || '');
+            return /\.(webm|mov)$/i.test(pic || '');
         },
         stillOf(pic) {
-            return pic.replace(/\.webm$/i, '.png');
+            return pic.replace(/\.(webm|mov)$/i, '.png');
         },
-        canPlayAlphaVideo() {
+        isAppleWebKit() {
             const ua = navigator.userAgent;
-            const isSafari = /Safari/.test(ua) && !/Chrome|Chromium|CriOS|FxiOS|EdgiOS|Android/.test(ua);
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            return !isSafari && !reducedMotion;
+            // every browser on iphone and ipad uses safari's engine, newer ipads report themselves as a mac with touch
+            const isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+            const isDesktopSafari = /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR|Firefox/.test(ua);
+            return isIOS || isDesktopSafari;
+        },
+        playVideo(event) {
+            // autoplay can be blocked, for example in low power mode on iphone, then show the still image
+            const playing = event.target.play();
+            if (playing) playing.catch(() => { this.videoFailed = true; });
         },
         nextProfilePic(){
             this.profilePicDegree = (this.profilePicDegree + 180) % 360 ;
