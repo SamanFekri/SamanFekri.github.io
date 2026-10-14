@@ -28,10 +28,10 @@ export default {
     data() {
         return {
             sections: {
-                About: { id: 'about', title: 'About Me', visible: true},
-                Experience: { id: 'experience', title: 'Work Experience', visible: false},
-                Education: { id: 'education', title: 'Education', visible: false},
-                More: { id: 'more', title: 'More', visible: false}
+                About: { id: 'about', title: 'About Me', visible: true, icon: 'me'},
+                Experience: { id: 'experience', title: 'Work Experience', visible: false, icon: 'laptop'},
+                Education: { id: 'education', title: 'Education', visible: false, icon: 'cap'},
+                More: { id: 'more', title: 'More', visible: false, icon: 'magnifier'}
             }
         }
     },

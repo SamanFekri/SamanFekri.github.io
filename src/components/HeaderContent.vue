@@ -5,19 +5,19 @@
             <div ref="dividerTitle" class="w-16 h-1 bg-primary-blue rounded"></div>
         </div>
         <div class="hidden md:flex flex-wrap justify-around border-l border-b p-4 rounded-bl-xl h-fit bg-white bg-opacity-5 border-white border-opacity-50">
-            <div v-for="(s, id) in sections" :key="`sht_${id}`" class="font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
+            <div v-for="(s, id) in sections" :key="`sht_${id}`" class="tab font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
              :class="{'selected': s.visible, 'not-selected': !s.visible}" :style="cssVars"
              @click="selectSection(s)">
-                {{ id }}
+                <TabIcon v-if="s.icon" :name="s.icon" class="mr-2"/>{{ id }}
             </div>
         </div>
         <!--mobile-->
         <div class="flex md:hidden flex-wrap justify-around w-full border-t border-white border-opacity-50 bg-primary-black fixed bottom-0 left-0 py-4 z-10">
-            <div v-for="(s, id) in sections" :key="`shb_${id}`" class="font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
+            <div v-for="(s, id) in sections" :key="`shb_${id}`" class="tab flex flex-col items-center text-sm font-bold hover:cursor-pointer ease-linear duration-300 mx-4" 
              :class="{'selected': s.visible, 'not-selected': !s.visible}" :style="cssVars"
              @click="selectSection(s)"
              >
-                {{ id  }}
+                <TabIcon v-if="s.icon" :name="s.icon" class="text-xl mb-1"/>{{ id  }}
             </div>
         </div>
     </div>
@@ -25,7 +25,11 @@
 
 <script>
 import { gsap } from 'gsap';
+import TabIcon from './TabIcon.vue';
 export default{
+    components: {
+        TabIcon
+    },
     props: {
         title: {
             type: String,
@@ -76,5 +80,18 @@ export default{
 }
 .not-selected:hover {
     color: #ffffff4d;
+}
+.tab :deep(.tab-icon) {
+    transition: transform 200ms ease-out, filter 300ms ease-out;
+}
+/* only the active tab shows the colorful icon, the others are grey */
+.not-selected :deep(.tab-icon) {
+    filter: grayscale(1) brightness(1.1);
+}
+@media (hover: hover) {
+    .tab:hover :deep(.tab-icon) {
+        transform: scale(1.15);
+        filter: none;
+    }
 }
 </style>
