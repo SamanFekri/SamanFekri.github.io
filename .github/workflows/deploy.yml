@@ -1,0 +1,49 @@
+# Builds the site from the `code` branch and publishes the `dist` folder to `master`,
+# which is the branch GitHub Pages serves for samanfekri.me.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [code]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# only one deploy at a time, a newer push cancels the older one
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Keep the README on the master branch too
+        run: cp README.md dist/README.md
+
+      - name: Publish dist to master
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./dist
+          cname: samanfekri.me
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy ${{ github.sha }} from code"
