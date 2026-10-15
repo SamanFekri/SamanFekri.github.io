@@ -51,8 +51,15 @@ export default {
             // called once the section has loaded its data and rendered its real element
             gsap.to(this.$refs[section.id].$el, {y: '0', duration: 0.6, ease: 'power3.out'});
         },
+        scrollToCard() {
+            // bring the top of the card to the top of the screen, on mobile the sidebar is above it
+            const top = this.$el.getBoundingClientRect().top + window.scrollY - 8;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top, behavior: reducedMotion ? 'auto' : 'smooth' });
+        },
         selectSection(section) {
-            // if the section is already visible, do nothing
+            this.scrollToCard();
+            // if the section is already visible, do nothing else
             if (section.visible) return;
             // find all visible sections and animate them out sections is an object
             const allVisibleSections = Object.values(this.sections).filter(s => s.visible);

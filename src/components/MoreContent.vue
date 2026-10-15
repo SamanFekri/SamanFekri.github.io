@@ -1,6 +1,6 @@
 <template>
     <div  v-if="!isLoading" class="bg-white bg-opacity-5 bg-primary-black">
-        <div class="flex flex-wrap p-8 text-color-paragraph text-opacity-100" >
+        <div class="flex flex-wrap p-4 md:p-8 text-color-paragraph text-opacity-100" >
             <div class="w-full">
                 <SectionHeader title="Personal Projects" class="mb-3"/>
                 <div v-for="item, index in data.projects" :key="'pp-' + index" class="mb-6">

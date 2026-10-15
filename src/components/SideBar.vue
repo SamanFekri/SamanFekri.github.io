@@ -2,7 +2,13 @@
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
         <div class="relative">
             <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
-                <video v-if="isVideo(currentPic)" :src="currentPic" class="translate-x-2 translate-y-3" autoplay muted loop playsinline :aria-label="name" @canplay="playVideo" @error="videoFailed = true"></video>
+                <!--the png shows right away and keeps the space, the video fades in on top only once it is really playing-->
+                <div v-if="isVideo(currentPic)" class="relative">
+                    <img :src="stillOf(currentPic)" :alt="name" :class="{ invisible: videoReady }"/>
+                    <video :src="currentPic" class="absolute inset-0 w-full h-full object-contain translate-x-2 translate-y-3 transition-opacity duration-300"
+                        :class="videoReady ? 'opacity-100' : 'opacity-0'" autoplay muted loop playsinline :aria-label="name"
+                        @canplay="playVideo" @playing="videoReady = true" @error="videoFailed = true"></video>
+                </div>
                 <img v-else :src="currentPic" :alt="name"/>
             </BorderGradiantBox>
             <div class="relative group">
@@ -86,7 +92,8 @@ export default{
             data: [],
             socialMedia: [],
             cta: {},
-            videoFailed: false
+            videoFailed: false,
+            videoReady: false
         }
     },
     computed: {
@@ -106,6 +113,11 @@ export default{
             return {
                 '--pic-rotation': `${this.profilePicDegree}deg`,
             }
+        }
+    },
+    watch: {
+        currentPic() {
+            this.videoReady = false;
         }
     },
     methods: {

@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap justify-between">
-        <div class="flex flex-wrap flex-col justify-between px-8" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+        <div class="flex flex-wrap flex-col justify-between px-4 md:px-8" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
             <h1 ref="sectionTitle" class="text-white font-bold text-2xl my-4">{{ title }}</h1>
             <div ref="dividerTitle" class="w-16 h-1 bg-primary-blue rounded"></div>
         </div>

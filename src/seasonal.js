@@ -32,6 +32,16 @@ const nowruzDay = year => findPersianDay(year, 3, 18, 24, 1, 1);
 // 1 Dey, the night before it is yalda
 const firstOfDey = year => findPersianDay(year, 12, 18, 25, 10, 1);
 
+// western (catholic) easter sunday, it moves every year (anonymous gregorian algorithm)
+function easterDay(year) {
+    const a = year % 19, b = Math.floor(year / 100), c = year % 100;
+    const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3);
+    const h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4;
+    const l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const month = Math.floor((h + l - 7 * m + 114) / 31), day = ((h + l - 7 * m + 114) % 31) + 1;
+    return utc(year, month, day);
+}
+
 // the nth weekday of a month, weekday 0 is sunday
 function nthWeekday(year, month, weekday, n) {
     const first = utc(year, month, 1);
@@ -47,6 +57,7 @@ export function eventsOf(year) {
     while (wednesday.getUTCDay() !== 3) wednesday = addDays(wednesday, -1);
     const dey = firstOfDey(year);
     const thanksgiving = nthWeekday(year, 11, 4, 4);
+    const easter = easterDay(year);
     const suriEvening = addDays(wednesday, -1);
     const stPatrick = utc(year, 3, 17);
 
@@ -56,11 +67,14 @@ export function eventsOf(year) {
         { id: 'suri', start: addDays(wednesday, -4), end: wednesday, day: suriEvening },
         { id: 'nowruz', start: addDays(wednesday, 1), end: addDays(nowruz, 12), day: nowruz },
         { id: 'yalda', start: addDays(dey, -4), end: dey, day: addDays(dey, -1) },
+        // after the persian events, so when easter falls inside nowruz, nowruz wins
+        { id: 'easter', start: addDays(easter, -2), end: addDays(easter, 1), day: easter },
         { id: 'halloween', start: utc(year, 10, 15), end: utc(year, 10, 31), day: utc(year, 10, 31) },
         { id: 'thanksgiving', start: addDays(thanksgiving, -6), end: addDays(thanksgiving, 1), day: thanksgiving },
         { id: 'christmas', start: utc(year, 12, 1), end: utc(year, 12, 30), day: utc(year, 12, 25) },
-        { id: 'newyear', start: utc(year - 1, 12, 31), end: utc(year, 1, 2), day: utc(year, 1, 1), year },
-        { id: 'newyear', start: utc(year, 12, 31), end: utc(year + 1, 1, 2), day: utc(year + 1, 1, 1), year: year + 1 },
+        { id: 'newyear', start: utc(year - 1, 12, 31), end: utc(year, 1, 5), day: utc(year, 1, 1), year },
+        { id: 'epifania', start: utc(year, 1, 6), end: utc(year, 1, 6), day: utc(year, 1, 6) },
+        { id: 'newyear', start: utc(year, 12, 31), end: utc(year + 1, 1, 5), day: utc(year + 1, 1, 1), year: year + 1 },
         { id: 'valentine', start: utc(year, 2, 10), end: utc(year, 2, 14), day: utc(year, 2, 14) }
     ];
 }

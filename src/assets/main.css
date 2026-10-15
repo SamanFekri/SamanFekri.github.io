@@ -7,6 +7,12 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0.5rem;
   font-weight: normal;
+}
+/* more space around the page from tablets up, phones keep it small so the cards are wider */
+@media (min-width: 768px) {
+  #app {
+    padding: 2rem;
+  }
 }
