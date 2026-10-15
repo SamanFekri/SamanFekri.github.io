@@ -98,7 +98,7 @@
 <script>
 import { unlock, lockState, recordFailure, recordSuccess } from '../hearts.js';
 
-// for now the floating button is hidden, the lock opens by clicking "Birthday" in the sidebar three times
+// the floating button is hidden until someone clicks my name or "Birthday" in the sidebar three times
 const SHOW_BUTTON = false;
 
 export default {
@@ -218,8 +218,13 @@ export default {
             this.typed = chars.slice(0, i).join('');
             if (i < chars.length) this.later(chars[i - 1] === '\n' ? 260 : 32, () => this.typeLetter(i + 1));
         },
-        openFromSecret() {
-            if (this.vault && !this.open) this.openDialog();
+        // the secret (three quick clicks) shows the button, it fades away again 20 seconds later
+        revealButton() {
+            if (!this.vault) return;
+            this.showButton = true;
+            this.expired = false;
+            clearTimeout(this.hideTimer);
+            this.hideTimer = setTimeout(() => { this.expired = true; this.tryHide(); }, 20000);
         },
         onKey(event) {
             if (event.key === 'Escape' && this.open) this.close();
@@ -231,13 +236,13 @@ export default {
             .then(vault => { this.vault = vault; })
             .catch(() => { this.vault = null; });
         window.addEventListener('keydown', this.onKey);
-        window.addEventListener('open-heart-lock', this.openFromSecret);
+        window.addEventListener('open-heart-lock', this.revealButton);
         this.waitTimer = setInterval(() => { if (this.open) this.updateWait(); }, 1000);
         this.hideTimer = setTimeout(() => { this.expired = true; this.tryHide(); }, 20000);
     },
     beforeUnmount() {
         window.removeEventListener('keydown', this.onKey);
-        window.removeEventListener('open-heart-lock', this.openFromSecret);
+        window.removeEventListener('open-heart-lock', this.revealButton);
         clearInterval(this.waitTimer);
         clearTimeout(this.hideTimer);
         this.timers.forEach(clearTimeout);
