@@ -45,6 +45,7 @@
                 :title="item.title"
                 :text="item.text"
                 :uri="item.uri"
+                :triple-click-event="item.title === 'Birthday' ? 'open-heart-lock' : ''"
                 :color="primaryBlue"
                 :delay="id * 500"
             />

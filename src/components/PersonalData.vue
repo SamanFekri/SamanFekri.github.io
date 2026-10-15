@@ -1,5 +1,5 @@
 <template>
-    <a class="flex flex-wrap items-center" :href="uri" target="_blank">
+    <a class="flex flex-wrap items-center" :href="uri" target="_blank" @click="onClick">
         <BorderGradiantBox :centerColor="color" class="w-12 h-12">
             <div class="flex justify-center items-center w-full h-full text-center text-lg cursor-pointer icon" :style="cssVars">
                 <font-awesome-icon :icon="icon" />
@@ -38,6 +38,11 @@ export default{
             type: String,
             required: true
         },
+        // when set, three quick clicks send this window event instead of opening the link
+        tripleClickEvent: {
+            type: String,
+            default: ''
+        },
         color: {
             type: String,
             default: '#f3f3f3'
@@ -53,6 +58,29 @@ export default{
                 '--color': this.color,
                 '--color-opacity': `${this.color}0a`
             }
+        }
+    },
+    methods: {
+        onClick(event) {
+            if (!this.tripleClickEvent) return;
+            // wait a moment to tell one click (open the link as usual) from three quick clicks (the secret)
+            event.preventDefault();
+            this.clicks = (this.clicks || 0) + 1;
+            clearTimeout(this.clickTimer);
+            if (this.clicks >= 3) {
+                this.clicks = 0;
+                window.dispatchEvent(new Event(this.tripleClickEvent));
+                return;
+            }
+            this.clickTimer = setTimeout(() => {
+                if (this.clicks === 1) {
+                    const link = document.createElement('a');
+                    link.href = this.uri;
+                    link.target = '_blank';
+                    link.click();
+                }
+                this.clicks = 0;
+            }, 450);
         }
     },
     mounted() {

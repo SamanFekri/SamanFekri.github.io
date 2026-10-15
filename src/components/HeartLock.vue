@@ -98,12 +98,15 @@
 <script>
 import { unlock, lockState, recordFailure, recordSuccess } from '../hearts.js';
 
+// for now the floating button is hidden, the lock opens by clicking "Birthday" in the sidebar three times
+const SHOW_BUTTON = false;
+
 export default {
     data() {
         return {
             vault: null,
             open: false,
-            showButton: true,
+            showButton: SHOW_BUTTON,
             hovering: false,
             expired: false,
             phrase: '',
@@ -213,6 +216,9 @@ export default {
             this.typed = chars.slice(0, i).join('');
             if (i < chars.length) this.later(chars[i - 1] === '\n' ? 260 : 32, () => this.typeLetter(i + 1));
         },
+        openFromSecret() {
+            if (this.vault && !this.open) this.openDialog();
+        },
         onKey(event) {
             if (event.key === 'Escape' && this.open) this.close();
         }
@@ -223,11 +229,13 @@ export default {
             .then(vault => { this.vault = vault; })
             .catch(() => { this.vault = null; });
         window.addEventListener('keydown', this.onKey);
+        window.addEventListener('open-heart-lock', this.openFromSecret);
         this.waitTimer = setInterval(() => { if (this.open) this.updateWait(); }, 1000);
         this.hideTimer = setTimeout(() => { this.expired = true; this.tryHide(); }, 20000);
     },
     beforeUnmount() {
         window.removeEventListener('keydown', this.onKey);
+        window.removeEventListener('open-heart-lock', this.openFromSecret);
         clearInterval(this.waitTimer);
         clearTimeout(this.hideTimer);
         this.timers.forEach(clearTimeout);
