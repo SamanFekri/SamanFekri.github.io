@@ -203,6 +203,16 @@
                             <path d="M24 39 l3.5 -4 l3.5 4 z M33 39 l3.5 -4 l3.5 4 z"/>
                             <path d="M23 46 l3 3 l3 -2 l3 2 l3 -2 l3 2 l3 -3 q-9 8 -18 0 z"/>
                         </g>
+                        <!--a little ghost floating in the bottom left, on mobile the curve hides that spot so it floats under the pumpkin-->
+                        <g :transform="isDesktop ? 'translate(9 47)' : 'translate(36 64)'">
+                            <g class="ghost">
+                                <path d="M-4.5 6 V-1 a4.5 4.5 0 0 1 9 0 V6 l-1.5 -1.4 l-1.5 1.4 l-1.5 -1.4 l-1.5 1.4 l-1.5 -1.4 z" fill="#f8f9fa"/>
+                                <ellipse cx="-1.6" cy="-0.6" rx="0.8" ry="1.1" fill="#212529"/>
+                                <ellipse cx="1.6" cy="-0.6" rx="0.8" ry="1.1" fill="#212529"/>
+                                <ellipse cx="0" cy="2" rx="0.8" ry="1" fill="#212529"/>
+                                <path d="M-4.5 1.6 q-2 0.6 -2.4 -1.4 M4.5 1.6 q2 0.6 2.4 -1.4" stroke="#f8f9fa" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                            </g>
+                        </g>
                     </g>
 
                     <!--thanksgiving: a turkey with a wobbling tail-->
@@ -485,8 +495,8 @@
                             <circle cx="32" cy="43" r="0.9" fill="#212529"/>
                             <circle cx="32" cy="48" r="0.9" fill="#212529"/>
                         </g>
-                        <!--snowballs thrown from both sides, they hit the snowman and burst-->
-                        <g v-for="(b, i) in [[4, 48, 'snowball-left'], [60, 46, 'snowball-right']]" :key="'sb' + i" :transform="`translate(${b[0]} ${b[1]})`">
+                        <!--snowballs: one hits the snowman and bursts, two fly high over the top of his hat to the other side-->
+                        <g v-for="(b, i) in [[4, 48, 'snowball-left'], [60, 46, 'snowball-over-left'], [4, 47, 'snowball-over-right']]" :key="'sb' + i" :transform="`translate(${b[0]} ${b[1]})`">
                             <circle :class="b[2]" r="1.7" fill="#ffffff" stroke="#c5d4f0" stroke-width="0.35"/>
                         </g>
                     </g>
@@ -818,6 +828,9 @@ export default {
 .face {
     animation: candle 1.2s ease-in-out infinite;
 }
+.ghost {
+    animation: ghost 2.6s ease-in-out infinite;
+}
 .witch {
     animation: witch 3.2s ease-in-out infinite alternate;
 }
@@ -860,9 +873,13 @@ export default {
 .snowball-left {
     animation: snowball-left 2.6s ease-in infinite;
 }
-.snowball-right {
-    animation: snowball-right 2.6s ease-in infinite;
-    animation-delay: -1.3s;
+.snowball-over-left {
+    animation: snowball-over-left 3.2s linear infinite;
+    animation-delay: -1.1s;
+}
+.snowball-over-right {
+    animation: snowball-over-right 3.2s linear infinite;
+    animation-delay: -2.3s;
 }
 @keyframes snowball-left {
     0% { transform: translate(0, 0) scale(1); opacity: 0; }
@@ -872,13 +889,28 @@ export default {
     90% { transform: translate(20.5px, -8px) scale(1.9); opacity: 0.5; }
     100% { transform: translate(20.5px, -8px) scale(2.2); opacity: 0; }
 }
-@keyframes snowball-right {
-    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+/* high arcs over the top of the snowman's hat */
+@keyframes snowball-over-left {
+    0% { transform: translate(0, 0); opacity: 0; }
     6% { opacity: 1; }
-    45% { transform: translate(-9px, -15px) scale(1); }
-    82% { transform: translate(-18px, -9px) scale(1); opacity: 1; }
-    90% { transform: translate(-18.5px, -9px) scale(1.9); opacity: 0.5; }
-    100% { transform: translate(-18.5px, -9px) scale(2.2); opacity: 0; }
+    25% { transform: translate(-14px, -30px); }
+    50% { transform: translate(-28px, -40px); }
+    75% { transform: translate(-42px, -30px); }
+    94% { opacity: 1; }
+    100% { transform: translate(-56px, 0); opacity: 0; }
+}
+@keyframes snowball-over-right {
+    0% { transform: translate(0, 0); opacity: 0; }
+    6% { opacity: 1; }
+    25% { transform: translate(14px, -29px); }
+    50% { transform: translate(28px, -39px); }
+    75% { transform: translate(42px, -29px); }
+    94% { opacity: 1; }
+    100% { transform: translate(56px, 1px); opacity: 0; }
+}
+@keyframes ghost {
+    0%, 100% { transform: translate(0, 0) rotate(-4deg); opacity: 0.95; }
+    50% { transform: translate(1.5px, -3px) rotate(4deg); opacity: 0.7; }
 }
 .kite {
     transform-origin: 50% 100%;
