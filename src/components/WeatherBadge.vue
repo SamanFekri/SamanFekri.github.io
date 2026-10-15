@@ -197,7 +197,8 @@ export default {
 .weather {
     overflow: visible;
 }
-.weather * {
+/* only animated pieces (they have a class) turn around their own center, static transforms keep their normal origin */
+.weather [class] {
     transform-box: fill-box;
     transform-origin: center;
 }
