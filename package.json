@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon --exec vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seal": "node scripts/seal-hearts.mjs",
+    "hearts": "node scripts/seal-hearts.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",

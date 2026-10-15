@@ -1,6 +1,6 @@
 <template>
     <!--only loaded while developing (npm run dev): pick any theme, a date to see what it gets, or turn on the birthday balloons-->
-    <div class="fixed z-40 left-2 bottom-20 md:bottom-2 bg-black bg-opacity-80 text-white text-xs rounded p-2 flex flex-col gap-1">
+    <div class="fixed z-40 left-2 top-2 bg-black bg-opacity-80 text-white text-xs rounded p-2 flex flex-col gap-1">
         <span class="font-bold">Preview (dev only)</span>
         <select v-model="preview.theme" class="bg-neutral-800 rounded px-1 py-0.5">
             <option value="">Automatic (by date)</option>

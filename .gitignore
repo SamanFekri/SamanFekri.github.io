@@ -9,3 +9,7 @@ node_modules/
 dist/
 # graphify knowledge graph (local only)
 graphify-out/
+
+# heart lock: phrases and messages in plain text, local only, never commit
+hearts.private.json
+.hearts-sealed
