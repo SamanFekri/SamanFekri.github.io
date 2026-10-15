@@ -287,9 +287,9 @@ import { preview, previewDate } from '../preview.js';
 
 
 const LABELS = {
-    yalda: 'Happy Yalda Night · شب یلدا مبارک',
-    suri: 'Happy Chaharshanbe Suri · چهارشنبه‌سوری مبارک',
-    nowruz: 'Happy Nowruz · نوروز مبارک',
+    yalda: 'Happy Yalda Night · شب یلدا ',
+    suri: 'Happy Chaharshanbe Suri · چهارشنبه‌سوری ',
+    nowruz: 'Happy Nowruz · نوروز پیروز',
     halloween: 'Happy Halloween',
     thanksgiving: 'Happy Thanksgiving',
     christmas: 'Merry Christmas',
