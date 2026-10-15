@@ -2,7 +2,8 @@
     <a class="flex flex-wrap items-center" :href="uri" target="_blank" @click="onClick">
         <BorderGradiantBox :centerColor="color" class="w-12 h-12">
             <div class="flex justify-center items-center w-full h-full text-center text-lg cursor-pointer icon" :style="cssVars">
-                <font-awesome-icon :icon="icon" />
+                <InfoIcon v-if="animatedIcon" :name="animatedIcon"/>
+                <font-awesome-icon v-else :icon="icon" />
             </div>
         </BorderGradiantBox>
         <div class="flex flex-wrap items-center ml-4" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
@@ -14,12 +15,14 @@
 
 <script>
 import BorderGradiantBox from './BorderGradiantBox.vue';
+import InfoIcon from './InfoIcon.vue';
 import { gsap } from 'gsap'
 
 
 export default{
     components:{
         BorderGradiantBox,
+        InfoIcon,
     },
     props: {
         icon: {
@@ -53,6 +56,19 @@ export default{
         }
     },
     computed:{
+        // the font awesome icons from the data that have an animated version
+        animatedIcon() {
+            const animated = {
+                'envelope': 'email',
+                'mobile-button': 'phone',
+                'mobile-alt': 'phone',
+                'birthday-cake': 'birthday',
+                'cake-candles': 'birthday',
+                'map-marker-alt': 'location',
+                'location-dot': 'location'
+            };
+            return animated[this.icon[1]] || null;
+        },
         cssVars() {
             return {
                 '--color': this.color,
