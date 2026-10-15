@@ -1,15 +1,16 @@
 <template>
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
-        <div class="relative">
-            <BorderGradiantBox border-radius="50%" class="w-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
+        <!--the circle has its full size from the start (full width, square), so nothing jumps while the picture loads-->
+        <div class="relative w-full">
+            <BorderGradiantBox border-radius="50%" class="w-full aspect-square p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
                 <!--the png shows right away and keeps the space, the video fades in on top only once it is really playing-->
-                <div v-if="isVideo(currentPic)" class="relative">
-                    <img :src="stillOf(currentPic)" :alt="name" :class="{ invisible: videoReady }"/>
+                <div v-if="isVideo(currentPic)" class="relative w-full h-full">
+                    <img :src="stillOf(currentPic)" :alt="name" class="w-full h-full object-cover" :class="{ invisible: videoReady }"/>
                     <video :src="currentPic" class="absolute inset-0 w-full h-full object-contain translate-x-2 translate-y-3 transition-opacity duration-300"
                         :class="videoReady ? 'opacity-100' : 'opacity-0'" autoplay muted loop playsinline :aria-label="name"
                         @canplay="playVideo" @playing="videoReady = true" @error="videoFailed = true"></video>
                 </div>
-                <img v-else :src="currentPic" :alt="name"/>
+                <img v-else-if="currentPic" :src="currentPic" :alt="name" class="w-full h-full object-cover"/>
             </BorderGradiantBox>
             <div class="relative group">
                 <!-- <img src="https://moodpal.samanfekri.me/user/82768138/mood/animated" 
