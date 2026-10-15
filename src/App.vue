@@ -1,8 +1,12 @@
 <script setup>
+import { defineAsyncComponent } from 'vue';
 import SideBar from './components/SideBar.vue';
 import MainContent from './components/MainContent.vue';
 import SeasonalBadge from './components/SeasonalBadge.vue';
+import BirthdayBalloons from './components/BirthdayBalloons.vue';
 
+// the preview panel only exists in development (npm run dev), the production build leaves it out
+const ThemePreview = import.meta.env.DEV ? defineAsyncComponent(() => import('./components/ThemePreview.vue')) : null;
 </script>
 
 <template>
@@ -10,6 +14,8 @@ import SeasonalBadge from './components/SeasonalBadge.vue';
       <SideBar class="w-full md:w-3/12"/>
       <MainContent class="w-full md:w-8/12"/>
       <SeasonalBadge/>
+      <BirthdayBalloons/>
+      <component :is="ThemePreview" v-if="ThemePreview"/>
     </div>
 </template>
 

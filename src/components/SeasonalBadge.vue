@@ -279,16 +279,12 @@
             {{ label }}
         </div>
     </div>
-    <!--only while developing (npm run dev): pick any theme or date to preview it, not part of the built site-->
-    <component :is="previewPanel" v-if="previewPanel" v-model:theme="devTheme" v-model:date="devDate" :themes="Object.keys(labels)" :showing="theme.id"/>
 </template>
 
 <script>
-import { defineAsyncComponent, markRaw } from 'vue';
 import { themeFor, toPersian } from '../seasonal.js';
+import { preview, previewDate } from '../preview.js';
 
-// the theme picker only exists in development, the production build leaves it out
-const previewPanel = import.meta.env.DEV ? markRaw(defineAsyncComponent(() => import('./ThemePreview.vue'))) : null;
 
 const LABELS = {
     yalda: 'Happy Yalda Night · شب یلدا مبارک',
@@ -314,15 +310,13 @@ const BACKGROUNDS = {
 export default {
     data() {
         return {
-            devTheme: '',
-            devDate: '',
             theme: { id: 'spring' },
             open: false,
             hover: false,
             isDesktop: true,
             media: null,
             labels: LABELS,
-            previewPanel,
+            preview,
             heart: 'M32 50 C20 41 13 34 13 26 C13 20 18 16 23 16 C27 16 30 18 32 21 C34 18 37 16 41 16 C46 16 51 20 51 26 C51 34 44 41 32 50 Z',
             timer: null
         }
@@ -376,14 +370,10 @@ export default {
     },
     methods: {
         pickTheme() {
-            // ?theme=nowruz shows a theme directly and ?date=2027-03-21 pretends it is that day, handy for previewing
-            const params = new URLSearchParams(window.location.search);
-            const forced = this.devTheme || params.get('theme');
-            if (forced && LABELS[forced]) return { id: forced, year: new Date().getFullYear() + 1 };
-            const day = this.devDate || params.get('date');
-            const date = day ? new Date(`${day}T12:00:00`) : new Date();
+            // the preview settings (dev panel or ?theme= / ?date= in the url) can force a theme or a date
+            if (preview.theme && LABELS[preview.theme]) return { id: preview.theme, year: new Date().getFullYear() + 1 };
             try {
-                return themeFor(date);
+                return themeFor(previewDate());
             } catch (error) {
                 // very old browsers without the persian calendar
                 console.log(error);
@@ -399,10 +389,10 @@ export default {
         }
     },
     watch: {
-        devTheme() {
+        'preview.theme'() {
             this.theme = this.pickTheme();
         },
-        devDate() {
+        'preview.date'() {
             this.theme = this.pickTheme();
         }
     },

@@ -80,3 +80,11 @@ export function themeFor(localDate = new Date()) {
     const event = eventsOf(date.getUTCFullYear()).find(e => date >= e.start && date <= e.end);
     return event || { id: seasonOf(date) };
 }
+
+// my birthday: 15 june and 25 khordad, in some years they are one day apart and both count
+export function isBirthday(localDate = new Date()) {
+    const date = utc(localDate.getFullYear(), localDate.getMonth() + 1, localDate.getDate());
+    if (date.getUTCMonth() === 5 && date.getUTCDate() === 15) return true;
+    const p = toPersian(date);
+    return p.month === 3 && p.day === 25;
+}
