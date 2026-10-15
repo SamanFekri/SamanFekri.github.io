@@ -7,7 +7,7 @@
 // hearts.private.json is git ignored and stays here, only the encrypted file is published.
 // It is a list of { "phrase", "name", "enabled", "mood": "sparkle" | "always", "text" }.
 // The output is a single opaque string: no list of entries, no names, no phrases.
-// Disabled messages are replaced by decoys, so the file looks the same whatever is on or off.
+// All messages are sealed, with their on/off switch inside the encryption, the site only opens enabled ones.
 //   flags used by the dev server and the build: --if-present (skip when there is no private file, like on github)
 //   and --if-changed (skip when the private file did not change since the last seal)
 import fs from 'node:fs';
@@ -60,25 +60,18 @@ if (command === 'enable' || command === 'disable') {
     process.exit(1);
 }
 
-const enabled = source.filter(item => item.enabled !== false);
-const phrases = enabled.map(item => normalizePhrase(item.phrase));
-if (new Set(phrases).size !== phrases.length) throw new Error('two enabled messages have the same phrase');
-
-if (enabled.length === 0) {
-    // nothing to unlock, the site hides the heart button
-    fs.writeFileSync(TARGET, 'null\n');
-    markSealed();
-    console.log(`all messages are off, ${TARGET} is empty and the heart button is hidden`);
-    process.exit(0);
-}
+const enabledCount = source.filter(item => item.enabled !== false).length;
+const phrases = source.map(item => normalizePhrase(item.phrase));
+if (new Set(phrases).size !== phrases.length) throw new Error('two messages have the same phrase');
 
 const salt = crypto.getRandomValues(new Uint8Array(16));
 const records = [];
-for (const item of enabled) {
-    records.push(await sealRecord(item.phrase, { name: item.name, text: item.text, mood: item.mood || 'sparkle' }, salt));
+// every message is sealed, the on/off switch is sealed inside it, so the file never shows what is enabled
+for (const item of source) {
+    records.push(await sealRecord(item.phrase, { name: item.name, text: item.text, mood: item.mood || 'sparkle', enabled: item.enabled !== false }, salt));
 }
 // a decoy is random bytes of the same size as a real record, it opens with nothing
-while (records.length < Math.max(TOTAL_RECORDS, enabled.length + 3)) {
+while (records.length < Math.max(TOTAL_RECORDS, source.length + 3)) {
     records.push(crypto.getRandomValues(new Uint8Array(RECORD_LENGTH)));
 }
 // shuffle so the real records are not at the start
@@ -89,5 +82,6 @@ for (let i = records.length - 1; i > 0; i--) {
 
 fs.writeFileSync(TARGET, JSON.stringify(pack(salt, ITERATIONS, records)) + '\n');
 markSealed();
-list();
-console.log(`sealed ${enabled.length} of ${source.length} messages into ${TARGET}`);
+// phrases are only shown when asked for (list, enable, disable), not in the automatic seals of dev and build
+if (command) list();
+console.log(`sealed all ${source.length} messages (${enabledCount} enabled) into ${TARGET}`);

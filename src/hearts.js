@@ -12,7 +12,7 @@ const IV_LENGTH = 12;
 // iv + padded message + 16 byte authentication tag
 export const RECORD_LENGTH = IV_LENGTH + PADDED_LENGTH + 16;
 
-// "My Witch " and "my  witch" are the same phrase
+// "Hello World " and "hello  world" are the same phrase
 export function normalizePhrase(text) {
     return text.toLowerCase().replace(/\s+/g, ' ').trim();
 }

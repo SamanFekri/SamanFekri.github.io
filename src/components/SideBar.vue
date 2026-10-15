@@ -32,7 +32,8 @@
             <WeatherBadge v-if="location" :location="location"/>
         </div>
         <div class="w-full text-center text-white">
-            <h1 class="text-2xl font-bold">{{name}}</h1>
+            <!--three quick clicks on my name open the heart lock-->
+            <h1 class="text-2xl font-bold select-none" @click="onNameClick">{{name}}</h1>
         </div>
         <div class="w-full flex justify-center text-center text-white mt-2 mb-2">
             <h1 class="text-sm px-4 py-1 bg-white bg-opacity-10 rounded-lg">{{bio}}</h1>
@@ -122,6 +123,16 @@ export default{
         }
     },
     methods: {
+        onNameClick() {
+            this.nameClicks = (this.nameClicks || 0) + 1;
+            clearTimeout(this.nameClickTimer);
+            if (this.nameClicks >= 3) {
+                this.nameClicks = 0;
+                window.dispatchEvent(new Event('open-heart-lock'));
+                return;
+            }
+            this.nameClickTimer = setTimeout(() => { this.nameClicks = 0; }, 600);
+        },
         isVideo(pic) {
             return /\.(webm|mov)$/i.test(pic || '');
         },

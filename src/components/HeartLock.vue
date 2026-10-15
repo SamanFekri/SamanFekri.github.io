@@ -180,7 +180,9 @@ export default {
             this.busy = true;
             this.wrong = false;
             const started = Date.now();
-            const message = await unlock(this.phrase, this.vault).catch(() => null);
+            const found = await unlock(this.phrase, this.vault).catch(() => null);
+            // a switched off message answers exactly like a wrong phrase
+            const message = found && found.enabled !== false ? found : null;
             // every answer takes at least a second, so guessing is slow
             await new Promise(r => setTimeout(r, Math.max(0, 1000 - (Date.now() - started))));
             this.busy = false;
