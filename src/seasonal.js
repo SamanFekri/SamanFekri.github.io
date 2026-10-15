@@ -62,10 +62,12 @@ export function eventsOf(year) {
     const stPatrick = utc(year, 3, 17);
 
     return [
+        // sizdah bedar, 13 farvardin, is the first priority and only one day
+        { id: 'sizdah', start: addDays(nowruz, 12), end: addDays(nowruz, 12), day: addDays(nowruz, 12) },
         // st patrick's falls inside the suri and nowruz ranges, it shows on its own day unless that day is the suri evening itself
         ...(stPatrick.getTime() !== suriEvening.getTime() ? [{ id: 'stpatrick', start: stPatrick, end: stPatrick, day: stPatrick }] : []),
         { id: 'suri', start: addDays(wednesday, -4), end: wednesday, day: suriEvening },
-        { id: 'nowruz', start: addDays(wednesday, 1), end: addDays(nowruz, 12), day: nowruz },
+        { id: 'nowruz', start: addDays(wednesday, 1), end: addDays(nowruz, 11), day: nowruz },
         { id: 'yalda', start: addDays(dey, -4), end: dey, day: addDays(dey, -1) },
         // after the persian events, so when easter falls inside nowruz, nowruz wins
         { id: 'easter', start: addDays(easter, -2), end: addDays(easter, 1), day: easter },

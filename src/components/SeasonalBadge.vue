@@ -41,6 +41,81 @@
                         <rect x="16" y="46" width="32" height="5" rx="2.5" fill="#83502a" transform="rotate(14 32 48.5)"/>
                     </g>
 
+                    <!--sizdah bedar: a picnic by a stream, the sabzeh floats away on the water, volleyball, joojeh kebab on the grill, tea on the blanket and a kite in the sky-->
+                    <g v-else-if="theme.id === 'sizdah'">
+                        <!--kite-->
+                        <g transform="translate(44 12)">
+                            <g class="kite">
+                                <path d="M0 -5 L4 0 L0 6 L-4 0 Z" fill="#ff6b6b"/>
+                                <path d="M0 -5 L0 6 M-4 0 L4 0" stroke="#ffd43b" stroke-width="0.5"/>
+                                <path d="M0 6 q-2 3 0 5 q2 3 -1 6" stroke="#ffffff" stroke-width="0.5" fill="none" opacity="0.8"/>
+                                <path d="M-1 9.6 l1 -0.8 l1 0.8 z M-0.6 13.6 l1 -0.8 l1 0.8 z" fill="#4dabf7"/>
+                            </g>
+                        </g>
+                        <!--grass and a tree-->
+                        <path d="M-40 38 Q16 34 104 38 V170 H-40 Z" fill="#69db7c"/>
+                        <path d="M-40 44 Q20 41 104 46 V170 H-40 Z" fill="#51cf66"/>
+                        <rect x="57.2" y="27" width="1.6" height="11" fill="#6b3e1f"/>
+                        <g class="blossom">
+                            <circle cx="58" cy="23" r="5.4" fill="#40c057"/>
+                            <circle cx="54.4" cy="26" r="3.2" fill="#37b24d"/>
+                            <circle cx="61.6" cy="26" r="3.4" fill="#2f9e44"/>
+                        </g>
+                        <!--volleyball: a net on the grass, two players jumping and the ball going over the net-->
+                        <path d="M19 38 V29 M33 38 V29" stroke="#dee2e6" stroke-width="0.7"/>
+                        <rect x="19" y="29.4" width="14" height="3.6" fill="none" stroke="#ffffff" stroke-width="0.4" opacity="0.8"/>
+                        <path d="M21.8 29.4 v3.6 M24.6 29.4 v3.6 M27.4 29.4 v3.6 M30.2 29.4 v3.6" stroke="#ffffff" stroke-width="0.3" opacity="0.6"/>
+                        <g v-for="(pl, i) in [[14, '#4dabf7', 'jump-left'], [38, '#ff6b6b', 'jump-right']]" :key="'vp' + i" :transform="`translate(${pl[0]} 38)`">
+                            <g :class="pl[2]">
+                                <circle cy="-8.6" r="1.4" fill="#f1c27d"/>
+                                <path d="M0 -7.2 v4" :stroke="pl[1]" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M0 -6.4 l-1.8 -2.6 M0 -6.4 l1.8 -2.6" :stroke="pl[1]" stroke-width="0.8" stroke-linecap="round"/>
+                                <path d="M0 -3.2 l-1.2 3.2 M0 -3.2 l1.2 3.2" stroke="#495057" stroke-width="0.8" stroke-linecap="round"/>
+                            </g>
+                        </g>
+                        <g transform="translate(15 27)">
+                            <circle class="volleyball" r="1.3" fill="#ffffff" stroke="#ffd43b" stroke-width="0.4"/>
+                        </g>
+                        <!--stream flowing from the back to the front, with moving ripples-->
+                        <path d="M4 39.4 Q20 42 27 50 Q34 59 48 65 T96 112" stroke="#4dabf7" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <path class="ripple" d="M4 39.4 Q20 42 27 50 Q34 59 48 65 T96 112" stroke="#d0ebff" stroke-width="0.7" fill="none" stroke-dasharray="2 3"/>
+                        <path class="ripple ripple-late" d="M6 38.4 Q21 41 28.4 49 Q35.6 58 50 63.6 T98 110" stroke="#d0ebff" stroke-width="0.5" fill="none" stroke-dasharray="1.4 3.6" opacity="0.7"/>
+                        <!--the sabzeh floating downstream-->
+                        <g class="sabzeh-float">
+                            <ellipse cx="0" cy="0" rx="3.2" ry="1.1" fill="#e5b33b"/>
+                            <rect x="-2.6" y="-2" width="5.2" height="1.2" fill="#e03131"/>
+                            <path d="M-2 -2 l-0.4 -3 M-0.7 -2 l0 -3.6 M0.7 -2 l0 -3.4 M2 -2 l0.4 -3" stroke="#51cf66" stroke-width="0.7" stroke-linecap="round"/>
+                        </g>
+                        <!--a grill with joojeh kebab skewers, glowing coals and smoke, on mobile it moves under the blanket where the curve leaves room-->
+                        <g :transform="isDesktop ? 'translate(15 56)' : 'translate(50 61)'">
+                            <path class="grill-smoke" d="M-2 -5 q-1.2 -2 0 -4 q1.2 -2 0 -4" stroke="#dee2e6" stroke-width="0.6" fill="none" opacity="0.7"/>
+                            <path class="grill-smoke grill-smoke-late" d="M2 -5 q-1.2 -2 0 -4 q1.2 -2 0 -4" stroke="#dee2e6" stroke-width="0.6" fill="none" opacity="0.7"/>
+                            <rect class="coals" x="-5.4" y="-3.6" width="10.8" height="1.2" fill="#ff6b00"/>
+                            <path d="M-6 -3 h12 l-1 3.4 h-10 z" fill="#495057"/>
+                            <path d="M-4.4 0.4 l-0.8 3 M4.4 0.4 l0.8 3" stroke="#343a40" stroke-width="0.6"/>
+                            <g v-for="(y, i) in [-4.2, -5.4]" :key="'sk' + i">
+                                <path :d="`M-7 ${y} h14`" stroke="#adb5bd" stroke-width="0.4"/>
+                                <rect v-for="(x, j) in [-4.4, -2.2, 0, 2.2, 4.4]" :key="'jj' + j" :x="x - 0.8" :y="y - 0.8" width="1.6" height="1.6" rx="0.4" :fill="j === 2 ? '#e03131' : '#f59f00'"/>
+                            </g>
+                        </g>
+                        <!--picnic blanket with a teapot, tea glasses and fruit-->
+                        <path d="M38 46 L55 44 L59 51 L42 53 Z" fill="#c92a2a"/>
+                        <path d="M39.4 47.6 L56 45.6 M41.4 51.2 L58 49.2" stroke="#fcc419" stroke-width="0.5"/>
+                        <g transform="translate(51 46.6)">
+                            <path class="steam" d="M0 -6.6 q-1 -1.4 0 -2.8 q1 -1.4 0 -2.8" stroke="#ffffff" stroke-width="0.5" fill="none" opacity="0.7"/>
+                            <ellipse cx="0" cy="-2.4" rx="2.6" ry="2.4" fill="#e7f5ff"/>
+                            <path d="M2.2 -3 l2 -1.6" stroke="#e7f5ff" stroke-width="0.8" stroke-linecap="round"/>
+                            <rect x="-1" y="-5.6" width="2" height="1" rx="0.4" fill="#74c0fc"/>
+                            <path d="M-2.4 -2.4 h4.8" stroke="#74c0fc" stroke-width="0.4"/>
+                        </g>
+                        <g v-for="(x, i) in [44.4, 47]" :key="'tea' + i" :transform="`translate(${x} ${49 - i * 0.4})`">
+                            <path d="M-0.9 -2.4 h1.8 l-0.4 2.4 h-1 z" fill="#c2410c" opacity="0.9"/>
+                        </g>
+                        <circle cx="55.6" cy="48.6" r="1.1" fill="#e03131"/>
+                        <circle cx="57" cy="49.4" r="1" fill="#ffa94d"/>
+                        <circle cx="56.2" cy="47.4" r="0.9" fill="#94d82d"/>
+                    </g>
+
                     <!--easter: a hopping bunny, a chick peeking out of a cracked egg and painted eggs on the grass-->
                     <g v-else-if="theme.id === 'easter'">
                         <path d="M-40 52 Q32 46 104 52 V170 H-40 Z" fill="#51cf66"/>
@@ -510,6 +585,7 @@ const LABELS = {
     yalda: 'Happy Yalda Night · شب یلدا ',
     suri: 'Happy Chaharshanbe Suri · چهارشنبه‌سوری ',
     nowruz: 'Happy Nowruz · نوروز پیروز',
+    sizdah: 'Happy Sizdah Bedar · سیزده‌بدر',
     easter: 'Happy Easter · Buona Pasqua',
     halloween: 'Happy Halloween',
     thanksgiving: 'Happy Thanksgiving',
@@ -524,7 +600,7 @@ const LABELS = {
     winter: 'Winter · زمستان'
 };
 const BACKGROUNDS = {
-    yalda: '#2a1630', suri: '#2b1a12', nowruz: '#14301f', easter: '#1d3324', halloween: '#24162e', thanksgiving: '#2e2112',
+    yalda: '#2a1630', suri: '#2b1a12', nowruz: '#14301f', sizdah: '#1c3a4a', easter: '#1d3324', halloween: '#24162e', thanksgiving: '#2e2112',
     christmas: '#10261a', newyear: '#101a33', epifania: '#16213e', valentine: '#33121f', stpatrick: '#11291a',
     spring: '#1d2b1a', summer: '#163049', autumn: '#2e1f12', winter: '#18263a'
 };
@@ -803,6 +879,73 @@ export default {
     82% { transform: translate(-18px, -9px) scale(1); opacity: 1; }
     90% { transform: translate(-18.5px, -9px) scale(1.9); opacity: 0.5; }
     100% { transform: translate(-18.5px, -9px) scale(2.2); opacity: 0; }
+}
+.kite {
+    transform-origin: 50% 100%;
+    animation: sway 2.2s ease-in-out infinite alternate;
+}
+.ripple {
+    animation: ripple 1.6s linear infinite;
+}
+.ripple-late {
+    animation-duration: 2.2s;
+}
+.sabzeh-float {
+    animation: sabzeh-float 7s linear infinite;
+}
+.steam {
+    animation: steam 2s ease-out infinite;
+}
+@keyframes ripple {
+    to { stroke-dashoffset: -10; }
+}
+/* follows the stream from the back to the front */
+@keyframes sabzeh-float {
+    0% { transform: translate(10px, 40px) scale(0.6); opacity: 0; }
+    8% { opacity: 1; }
+    35% { transform: translate(24px, 48px) scale(0.8) rotate(8deg); }
+    65% { transform: translate(32px, 57px) scale(0.95) rotate(-6deg); }
+    92% { opacity: 1; }
+    100% { transform: translate(46px, 65px) scale(1.1) rotate(6deg); opacity: 0; }
+}
+@keyframes steam {
+    0% { transform: translateY(1px); opacity: 0; }
+    30% { opacity: 0.8; }
+    100% { transform: translateY(-3px); opacity: 0; }
+}
+.volleyball {
+    animation: volleyball 1.6s ease-in-out infinite alternate;
+}
+.jump-left {
+    animation: jump-left 3.2s ease-in-out infinite;
+}
+.jump-right {
+    animation: jump-right 3.2s ease-in-out infinite;
+}
+.grill-smoke {
+    animation: steam 2.2s ease-out infinite;
+}
+.grill-smoke-late {
+    animation-delay: -1.1s;
+}
+.coals {
+    animation: candle 1s ease-in-out infinite;
+}
+/* the ball flies in an arc over the net from one player to the other and back */
+@keyframes volleyball {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(5.5px, -5px); }
+    50% { transform: translate(11px, -6.6px); }
+    75% { transform: translate(16.5px, -5px); }
+    100% { transform: translate(22px, 0); }
+}
+@keyframes jump-left {
+    0%, 100% { transform: translateY(-2px); }
+    12%, 88% { transform: translateY(0); }
+}
+@keyframes jump-right {
+    0%, 38%, 62%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
 }
 .santa-wave {
     transform-origin: 0% 100%;

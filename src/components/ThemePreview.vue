@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             preview,
-            themes: ['yalda', 'suri', 'nowruz', 'easter', 'halloween', 'thanksgiving', 'christmas', 'newyear', 'epifania', 'valentine', 'stpatrick', 'spring', 'summer', 'autumn', 'winter']
+            themes: ['yalda', 'suri', 'nowruz', 'sizdah', 'easter', 'halloween', 'thanksgiving', 'christmas', 'newyear', 'epifania', 'valentine', 'stpatrick', 'spring', 'summer', 'autumn', 'winter']
         }
     },
     computed: {
