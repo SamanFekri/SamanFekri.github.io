@@ -42,6 +42,8 @@
         <div class="w-full flex justify-center text-center text-white mt-2 mb-2">
             <h1 class="text-sm px-4 py-1 bg-white bg-opacity-10 rounded-lg">{{bio}}</h1>
         </div>
+        <!--my specialties type themselves one after another under the title-->
+        <TypeRotator v-if="specialties.length" :items="specialties" class="w-full text-center text-sm text-color-paragraph mb-1"/>
         <div class="w-full border-t mx-4 my-4 border-white border-opacity-50"> </div>
         <div class="w-full my-4">
             <!--for loop over the data id is the index of it-->
@@ -76,6 +78,7 @@
 import BorderGradiantBox from './BorderGradiantBox.vue';
 import PersonalData from './PersonalData.vue';
 import WeatherBadge from './WeatherBadge.vue';
+import TypeRotator from './TypeRotator.vue';
 import axios from 'axios'
 import { gsap } from 'gsap'
 
@@ -83,7 +86,8 @@ export default{
     components:{
         BorderGradiantBox,
         PersonalData,
-        WeatherBadge
+        WeatherBadge,
+        TypeRotator
     },
     data() {
         return {
@@ -94,6 +98,7 @@ export default{
             primaryBlack: '#181818',
             primaryWhite: '#f3f3f3',
             bio: '',
+            specialties: [],
             name: '',
             data: [],
             socialMedia: [],
@@ -171,6 +176,7 @@ export default{
                 this.profilePics = response.data.pics;
                 this.name = `${response.data.firstName} ${response.data.lastName}`;
                 this.bio = response.data.bio;
+                this.specialties = response.data.specialties || [];
                 this.socialMedia = response.data.socialMedia;
                 this.data = response.data.data;
                 this.cta = response.data.cta;
