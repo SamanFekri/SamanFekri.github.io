@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-wrap justify-center item-aligns h-fit bg-white bg-opacity-5 p-4 rounded-xl border border-white border-opacity-50 mb-4">
         <!--the circle has its full size from the start (full width, square), so nothing jumps while the picture loads-->
-        <div class="relative w-full">
+        <div class="relative w-4/5 md:w-full">
             <BorderGradiantBox border-radius="50%" class="w-full aspect-square p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
                 <!--the png shows right away and keeps the space, the video fades in on top only once it is really playing-->
                 <div v-if="isVideo(currentPic)" class="relative w-full h-full">
