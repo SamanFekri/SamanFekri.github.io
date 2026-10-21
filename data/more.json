@@ -1,6 +1,18 @@
 {
     "projects": [
         {
+            "title": "Mango3S",
+            "tagline": "The free desktop IDE for MongoDB",
+            "tags": [
+                "Desktop App",
+                "MongoDB",
+                "Developer Tools"
+            ],
+            "link": "https://mango3s.com",
+            "linkLabel": "Visit site",
+            "text": "<ul style='list-style: inside; list-style-type: disc;'><li> A complete MongoDB IDE that runs on your computer, free for macOS, Windows and Linux, with no account or license key.</li><li> Query in mongosh syntax with autocomplete, edit documents in place, build aggregation pipelines with a preview of every stage and read the schema of your data.</li><li> Explain plans with index advice, compare and sync databases, import, export and backups, optional AI help, and passwords kept in the system's credential store.</li></ul>"
+        },
+        {
             "title": "SamDrive (Patente B)",
             "tagline": "Persian prep for the Italian driving theory exam",
             "tags": [

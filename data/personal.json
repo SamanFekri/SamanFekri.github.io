@@ -2,6 +2,14 @@
     "firstName": "Saman",
     "lastName": "Fekri",
     "bio": "Software Engineer",
+    "specialties": [
+        "Go & Microservices",
+        "Full-Stack Developer",
+        "AI Engineer",
+        "Machine Learning Engineer",
+        "Generative AI & LLMs",
+        "Product Manager"
+    ],
     "pics": [
         "avatar.webm",
         "profile.jpeg"
