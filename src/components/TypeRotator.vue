@@ -1,6 +1,6 @@
 <template>
-    <!--types each item, holds it so it can be read, erases it and moves to the next one-->
-    <p class="type-rotator" aria-live="off">
+    <!--types each item, holds it so it can be read, erases it and moves to the next one, after one round it rests on the first item-->
+    <p class="type-rotator" :class="{ done }" aria-live="off">
         <span class="sr-only">{{ items.join(', ') }}</span>
         <span aria-hidden="true">{{ shown }}<span class="cursor">▍</span></span>
     </p>
@@ -21,6 +21,7 @@ export default {
         return {
             index: 0,
             shown: '',
+            done: false,
             timer: null
         }
     },
@@ -33,6 +34,9 @@ export default {
             if (this.shown.length < word.length) {
                 this.shown = word.slice(0, this.shown.length + 1);
                 this.later(this.typeSpeed, this.type);
+            } else if (this.finishing) {
+                // one full round is enough, it rests on the first item
+                this.done = true;
             } else {
                 this.later(this.hold, this.erase);
             }
@@ -43,6 +47,7 @@ export default {
                 this.later(this.eraseSpeed, this.erase);
             } else {
                 this.index = (this.index + 1) % this.items.length;
+                if (this.index === 0) this.finishing = true;
                 this.later(300, this.type);
             }
         }
@@ -65,6 +70,9 @@ export default {
 <style scoped>
 .type-rotator {
     min-height: 1.5em;
+}
+.done .cursor {
+    display: none;
 }
 .cursor {
     margin-left: 1px;

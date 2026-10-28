@@ -66,6 +66,12 @@ export default {
 .info-icon [class] {
     transform-box: fill-box;
     transform-origin: center;
+    /* play once when the page loads, then rest */
+    animation-iteration-count: 1;
+}
+/* and again while the row is hovered */
+a:hover .info-icon [class] {
+    animation-iteration-count: infinite;
 }
 
 /* email */

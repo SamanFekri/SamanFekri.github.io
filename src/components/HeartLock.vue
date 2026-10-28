@@ -1,9 +1,9 @@
 <template>
     <!--a challenge to unlock my heart: the right secret phrase opens a message meant only for the one who knows it-->
-    <!--fixed at the bottom left of the screen, on mobile just above the tab bar-->
+    <!--fixed at the bottom left of the screen, on mobile just above the floating tab bar-->
     <!--it fades away after 20 seconds, but never while the mouse is on it or the challenge is open-->
     <Transition name="cta">
-        <button v-if="vault && showButton" type="button" class="heart-cta fixed z-30 left-3 bottom-[68px] md:left-4 md:bottom-4 flex items-center gap-2 rounded-full pl-2 pr-4 py-1.5 text-white text-sm font-bold" @click="openDialog" @mouseenter="hovering = true" @mouseleave="hovering = false; tryHide()">
+        <button v-if="vault && showButton" type="button" class="heart-cta fixed z-30 left-3 bottom-[84px] md:left-4 md:bottom-4 flex items-center gap-2 rounded-full pl-2 pr-4 py-1.5 text-white text-sm font-bold" @click="openDialog" @mouseenter="hovering = true" @mouseleave="hovering = false; tryHide()">
             <svg class="cta-heart w-8 h-8 shrink-0" viewBox="0 0 120 140" aria-hidden="true">
                 <path d="M38 58 V40 a22 22 0 0 1 44 0 V58" fill="none" stroke="#ffd43b" stroke-width="9" stroke-linecap="round"/>
                 <path :d="heartPath" fill="#e64980" stroke="#ffd43b" stroke-width="4"/>

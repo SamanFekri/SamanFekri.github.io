@@ -4,7 +4,8 @@
             the spacer is as tall as it is wide (padding-top 100%), works in every browser including older safari-->
         <div class="relative w-4/5 md:w-full mb-2">
             <div class="relative w-full pt-[100%]">
-            <BorderGradiantBox border-radius="50%" class="absolute inset-0 w-full h-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars">
+            <BorderGradiantBox border-radius="50%" class="absolute inset-0 w-full h-full p-2 hover:cursor-pointer overflow-hidden pic" @click="nextProfilePic" :style="cssVars"
+                role="button" tabindex="0" aria-label="Flip between my Memoji and my photo" @keydown.enter.prevent="nextProfilePic" @keydown.space.prevent="nextProfilePic">
                 <!--the png shows right away and keeps the space, the video fades in on top only once it is really playing-->
                 <div v-if="isVideo(currentPic)" class="relative w-full h-full">
                     <img :src="stillOf(currentPic)" :alt="name" class="w-full h-full object-cover" :class="{ invisible: videoReady }"/>
@@ -21,11 +22,14 @@
                     width="32" height="32" :alt="`${name}'s current mood`"
                 /> -->
                 <mood-pal src="https://moodpal.samanfekri.me/user/82768138/mood/tgs" 
-                    class="absolute right-0 bottom-4 hover:cursor-pointer w-[32px] h-[32px]"></mood-pal>
+                    class="absolute right-0 bottom-4 hover:cursor-pointer w-[32px] h-[32px]" role="button" tabindex="0" :aria-label="`${name}'s current mood`"
+                    @click="moodOpen = !moodOpen" @keydown.enter.prevent="moodOpen = !moodOpen"></mood-pal>
                      
-                <div class="absolute right-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                <!--shows on hover, and on tap for phones where there is no hover; when it is open the link can be clicked-->
+                <div class="absolute right-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 transition-opacity whitespace-nowrap z-10"
+                    :class="moodOpen ? 'opacity-100' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'">
                     {{ name }}'s current mood.
-                    <span class="flex items-center text-[0.5rem]">
+                    <span class="flex items-center text-[0.7rem]">
                         <a href="https://t.me/MoodPalBot" target="_blank" class="text-blue-400" >
                            <font-awesome-icon :icon="['fab', 'telegram']" />  @MoodPalBot 
                         </a>
@@ -59,13 +63,16 @@
         </div>
         <nav ref="navSocialMedia" class="flex flex-wrap justify-center items-center w-full mb-4">
             <!--link for each brand in socialMedia with its icon-->
-            <a v-for="(item, id) in socialMedia" :key="`sm_${id}`" target="_blank" :href="item.link" class="w-6 h-6 m-1" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
-                <font-awesome-icon :icon="item.icon" class="w-full h-full text-white opacity-50 hover:opacity-100 ease-linear duration-300 hidden"/>
+            <!--the icons stay 24px, the link around them is 36px so it is easy to tap, and it has a name for screen readers-->
+            <a v-for="(item, id) in socialMedia" :key="`sm_${id}`" target="_blank" :href="item.link" :aria-label="socialName(item)" class="social-link w-9 h-9 flex items-center justify-center rounded-md">
+                <span class="block w-6 h-6" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+                    <font-awesome-icon :icon="item.icon" class="w-full h-full text-white opacity-50 hover:opacity-100 ease-linear duration-300 hidden"/>
+                </span>
             </a>
         </nav>
         <a class="w-full text-center flex justify-center" :href="cta.link" target="_blank">
             <BorderGradiantBox border-radius="15px" class="w-10/12" :center-color="primaryBlue">
-                <div class="w-full h-full flex justify-center items-center text-lg p-4 text-white opacity-50 hover:opacity-100 ease-linear duration-300 card_bg">
+                <div class="w-full h-full flex justify-center items-center text-lg p-4 text-white ease-linear duration-300 card_bg">
                     <font-awesome-icon :icon="cta.icon" />
                     <span class="ml-2">{{ cta.text }}</span>
                 </div>
@@ -99,6 +106,7 @@ export default{
             primaryWhite: '#f3f3f3',
             bio: '',
             specialties: [],
+            moodOpen: false,
             name: '',
             data: [],
             socialMedia: [],
@@ -132,6 +140,10 @@ export default{
         }
     },
     methods: {
+        socialName(item) {
+            const names = { github: 'GitHub', linkedin: 'LinkedIn', twitter: 'Twitter', instagram: 'Instagram', telegram: 'Telegram' };
+            return names[item.icon[1]] || item.icon[1];
+        },
         onNameClick() {
             this.nameClicks = (this.nameClicks || 0) + 1;
             clearTimeout(this.nameClickTimer);
@@ -214,6 +226,10 @@ export default{
     transform: rotateY(var(--pic-rotation));
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
+}
+.social-link:focus-visible, .pic:focus-visible {
+    outline: 2px solid #3a7ff5;
+    outline-offset: 2px;
 }
 .card_bg {
     background: linear-gradient(135deg, #3a7ff5a0, #f3f3f320,#f3f3f320);

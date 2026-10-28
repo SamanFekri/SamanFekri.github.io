@@ -1,7 +1,7 @@
 <template>
     <!--shows the current time of day and weather of the location as a small animated scene, each weather code has its own look-->
     <div v-if="weather" class="relative group">
-        <svg class="weather absolute left-0 bottom-4 w-[32px] h-[32px]" viewBox="0 0 32 32" role="img" :aria-label="summary">
+        <svg class="weather absolute left-0 bottom-4 w-[32px] h-[32px] cursor-pointer" viewBox="0 0 32 32" role="img" :aria-label="summary" @click="open = !open">
             <!--stars only at night when the sky is visible-->
             <g v-if="!weather.isDay && scene.sky" fill="#ffe8a3">
                 <path class="star star-1" d="M5 4 l0.6 1.4 l1.4 0.6 l-1.4 0.6 l-0.6 1.4 l-0.6 -1.4 l-1.4 -0.6 l1.4 -0.6 z"/>
@@ -43,10 +43,10 @@
                 <path class="crystal crystal-late" d="M25 23.4 v4.4 M23.1 24.5 l3.8 2.2 M23.1 26.7 l3.8 -2.2"/>
             </g>
         </svg>
-        <span class="absolute left-0 bottom-[7px] w-[32px] text-center text-[0.6rem] font-bold leading-none text-white text-opacity-80 tabular-nums">{{ localTime }}</span>
-        <div class="absolute left-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+        <span class="absolute left-0 bottom-[7px] w-[32px] text-center text-[0.7rem] font-bold leading-none text-white text-opacity-80 tabular-nums">{{ localTime }}</span>
+        <div class="absolute left-0 bottom-12 bg-black bg-opacity-80 text-white text-xs rounded px-2 py-1 transition-opacity pointer-events-none whitespace-nowrap z-10" :class="open ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'">
             {{ summary }}
-            <span class="flex items-center text-[0.5rem] text-blue-400">Weather data by Open-Meteo.com</span>
+            <span class="flex items-center text-[0.7rem] text-blue-400">Weather data by Open-Meteo.com</span>
         </div>
     </div>
 </template>
@@ -99,6 +99,7 @@ export default {
     data() {
         return {
             place: null,
+            open: false,
             weather: null,
             now: new Date(),
             clockTimer: null,

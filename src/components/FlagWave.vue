@@ -59,7 +59,11 @@ export default {
     height: 100%;
     background-size: var(--width) var(--height);
     background-repeat: no-repeat;
-    animation: wave 1.4s ease-in-out infinite alternate;
+    /* wave twice when the page loads, then rest, and wave again while hovered */
+    animation: wave 1.4s ease-in-out 4 alternate;
+}
+li:hover .slice, .flag:hover .slice {
+    animation-iteration-count: infinite;
 }
 .slice:first-child {
     border-radius: 2px 0 0 2px;
